@@ -1,0 +1,107 @@
+/* -------------------------------------------------------------------------- */
+/* ---------- Buttons ------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.button {
+	border: 1px solid;
+	border-radius: 8px;
+	box-sizing: content-box;
+	height: 30px;
+	padding: 8px 16px;
+
+	background: none;
+
+	align-items: center;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+
+	font-size: 16px;
+	font-weight: 400;
+}
+.button:hover {
+	cursor: pointer;
+}
+.button[style*='--before-image']::before {
+	background-image: var(--before-image);
+}
+.button[style*='--after-image']::after {
+	background-image: var(--after-image);
+}
+.button[style*='--before-image']::before,
+.button[style*='--after-image']::after {
+	height: 30px;
+	width: 30px;
+
+	content: "";
+	background-size: 30px 30px;
+
+	display: flex;
+}
+
+
+.button.first-color {
+	border-color: var(--first-color);
+
+	color: var(--first-color);
+}
+.button.first-color:hover {
+	background: var(--hover-first-color);
+}
+.button.first-color[style*='--before-image']::before,
+.button.first-color[style*='--after-image']::after {
+	filter: var(--filter-first-color);
+}
+.button.first-color.full-button {
+	background-color: var(--first-color);
+
+	color: var(--contrasted-first-color);
+}
+.button.first-color.full-button:hover {
+	background: var(--hover-second-color);
+}
+.button.first-color.full-button[style*='--before-image']::before,
+.button.first-color.full-button[style*='--after-image']::after {
+	filter: var(--contrasted-filter-first-color);
+}
+
+
+.button.second-color {
+	border-color: var(--second-color);
+
+	color: var(--second-color);
+}
+.button.second-color:hover {
+	background: var(--hover-second-color);
+}
+.button.second-color[style*='--before-image']::before,
+.button.second-color[style*='--after-image']::after {
+	filter: var(--filter-second-color);
+}
+.button.second-color.full-button {
+	background-color: var(--second-color);
+
+	color: var(--contrasted-second-color);
+}
+.button.second-color.full-button:hover {
+	background: var(--hover-first-color);
+}
+.button.second-color.full-button[style*='--before-image']::before,
+.button.second-color.full-button[style*='--after-image']::after {
+	filter: var(--contrasted-filter-second-color);
+}
+
+
+.button.no-border {
+	border: none;
+}
+
+
+.button.large-button {
+	box-sizing: content-box;
+	height: 40px;
+	padding: 8px 24px;
+
+	font-size: 24px;
+}

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build-css": "sass ./assets/styles/scss/style.scss:./assets/styles/style.css"
+  },
+  "dependencies": {
+    "fullcalendar": "^6.1.13",
+    "sass": "^1.77.5"
+  }
+}

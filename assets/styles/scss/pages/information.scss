@@ -1,0 +1,111 @@
+/* -------------------------------------------------------------------------- */
+/* ---------- Information page ---------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.info-page-map-wrapper {
+	padding: 16px 32px;
+
+	background-color: var(--anti-flash-white);
+
+	display: flex;
+	gap: 16px;
+}
+
+.info-page-map-list-container {
+	padding: 16px 0;
+	display: flex;
+	flex: 1 0 30%;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.info-page-map-list-description {
+	margin: 0;
+}
+
+.info-page-map-list-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.info-page-map-list-title {
+	margin: 0;
+}
+
+.info-page-map-list {
+	margin: 0;
+	padding: 0 16px;
+
+	display: flex;
+	flex-direction: column;
+
+	list-style: none;
+}
+
+.info-page-event-input {
+	display: flex;
+	flex-direction: column;
+}
+
+.info-page-event-link {
+	box-sizing: content-box;
+	height: 30px;
+
+	justify-content: space-between;
+}
+.info-page-event-link:hover {
+	background-color: #cdcdcd !important;
+}
+.info-page-event-link.focused-on {
+	border-color: var(--first-color);
+	background-color: var(--first-color);
+}
+.info-page-event-link.focused-on::after {
+	height: 30px;
+	width: 30px;
+
+	content: "";
+	background-image: url('/assets/icons/x-circle.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	filter: var(--filter-second-color);
+
+	display: flex;
+}
+.info-page-event-link.focused-on:hover {
+	background-color: var(--hover-second-color) !important;
+}
+
+.info-page-map {
+	flex: 1 1 60%;
+	z-index: 0;
+}
+
+.info-page-section-content-wrapper {
+	padding: 0 32px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.rules-links-wrapper {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.info-page-section-text {
+	margin: 0;
+
+	font-size: 20px;
+	text-align: justify;
+}
+
+.info-page-rules-link {
+	align-self: center;
+}
+

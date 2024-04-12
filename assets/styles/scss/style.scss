@@ -1,0 +1,37 @@
+@import "components/buttons";
+@import "components/forms";
+@import "components/links";
+@import "components/panels";
+
+@import "includes/header";
+@import "includes/footer";
+@import "includes/page-content";
+
+@import "pages/homepage";
+@import "pages/calendar";
+@import "pages/contestants";
+@import "pages/information";
+@import "pages/results";
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------- Pages generalities -------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	color: var(--fifth-color);
+	font-family: "Lato", sans-serif;
+}
+

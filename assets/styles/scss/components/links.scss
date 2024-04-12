@@ -1,0 +1,82 @@
+/* -------------------------------------------------------------------------- */
+/* ---------- Links --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.link {
+	border: none;
+	border-bottom: 1px solid;
+	margin-top: -1px;
+	padding: 8px;
+
+	background: none;
+
+	align-items: center;
+	display: flex;
+	gap: 6px;
+
+	font-size: 16px;
+	line-height: 19px;
+	text-decoration: none;
+}
+.link:hover {
+	cursor: pointer;
+}
+.link[style*='--before-image']::before {
+	background-image: var(--before-image);
+}
+.link[style*='--after-image']::after {
+	background-image: var(--after-image);
+}
+.link[style*='--before-image']::before,
+.link[style*='--after-image']::after {
+	height: 30px;
+	width: 30px;
+
+	content: "";
+	background-size: 30px 30px;
+
+	display: flex;
+}
+
+
+.link.first-color {
+	border-color: var(--first-color);
+
+	color: var(--first-color);
+}
+.link.first-color:hover {
+	background: var(--hover-first-color);
+}
+.link.first-color[style*='--before-image']::before,
+.link.first-color[style*='--after-image']::after {
+	filter: var(--filter-first-color);
+}
+
+
+.link.second-color {
+	border-color: var(--second-color);
+
+	color: var(--second-color);
+}
+.link.second-color:hover {
+	background: var(--hover-second-color);
+}
+.link.second-color[style*='--before-image']::before,
+.link.second-color[style*='--after-image']::after {
+	filter: var(--filter-second-color);
+}
+
+
+.link.no-underline {
+	border-bottom: none;
+}
+.button-link {
+	text-decoration: none;
+}
+.link.large-link {
+	justify-content: space-between;
+}
+.link.center-link {
+	justify-content: center;
+}

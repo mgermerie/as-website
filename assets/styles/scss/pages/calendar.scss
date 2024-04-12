@@ -1,0 +1,138 @@
+/* -------------------------------------------------------------------------- */
+/* ---------- Calendar page ------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.calendar-filter-form {
+	padding: 16px;
+
+	background-color: var(--anti-flash-white);
+
+	align-items: center;
+	display: flex;
+	gap: 32px;
+	justify-content: space-between;
+}
+
+.fieldset-event-filters {
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 32px;
+}
+
+.legend-event-filters {
+	padding-bottom: 24px;
+
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.calendar-filter-label {
+	cursor: pointer;
+}
+
+.calendar-filter-validate {
+	align-self: flex-end;
+}
+
+a.fc-event:hover {
+	cursor: pointer;
+}
+
+.event-panel-title {
+	margin: 0;
+
+	font-size: 32px;
+	text-transform: capitalize;
+}
+
+.event-panel-details-section {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.event-panel-details-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.event-panel-details-value {
+	display: flex;
+	gap: 16px;
+}
+
+.event-panel-text {
+	margin: 0;
+
+	font-size: 16px;
+}
+
+.event-map {
+	height: 200px;
+
+	flex-shrink: 0;
+}
+
+.event-panel-registration {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.event-panel-registration-form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.event-panel-registration-fieldset {
+	gap: 8px;
+}
+
+.registered-as-referee {
+	font-weight: bold;
+}
+.unregister-user {
+	display: none;
+}
+.registered-user > .register-user {
+	display: none;
+}
+.registered-user > .unregister-user {
+	display: flex;
+}
+.unregister-referee {
+	display: none;
+}
+.registered-referee > .register-referee {
+	display: none;
+}
+.registered-referee > .unregister-referee {
+	display: flex;
+}
+.cannot-register-label {
+	display: none;
+
+	text-align: center;
+}
+.cannot-register .cannot-register-label {
+	display: inline;
+}
+.cannot-register .event-register-button {
+	display: none;
+}
+
+
+.remove-event {
+	display: none;
+}
+.form-remove-event > .remove-event {
+	display: flex;
+}
+.form-remove-event > :not(.remove-event) {
+	display: none;
+}
+.form-remove-event + .button-remove-event {
+	display: none;
+}
+

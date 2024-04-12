@@ -1,0 +1,6 @@
+node_modules/
+.sass-cache
+
+assets/styles/style.css
+assets/styles/style.css.map
+

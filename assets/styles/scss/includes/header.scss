@@ -1,0 +1,241 @@
+/* -------------------------------------------------------------------------- */
+/* ---------- Header -------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.header {
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	height: var(--header-height);
+	padding: 0 var(--horizontal-padding-desktop);
+	width: 100%;
+
+	background-color: var(--first-color);
+
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	left: 0;
+	top: 0;
+	position: fixed;
+	z-index: 100;
+}
+
+
+.header-logo-wrapper {
+	height: 100%;
+
+	justify-self: flex-start;
+}
+.header-logo-link {
+	height: 100%;
+	width: 100%;
+
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.header-logo {
+	display: block;
+	max-height: 80%;
+	max-width: 100%;
+
+	filter: drop-shadow(16px 16px 20px white);
+}
+
+
+.header-navigation {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	gap: 24px;
+	justify-self: center;
+}
+.header-navigation > li{
+	list-style: none;
+}
+.link.current-page {
+	border-width: 2px;
+	margin-bottom: -2px;
+}
+
+
+.header-account-toggle {
+	justify-self: flex-end;
+}
+
+.header-menu {
+	z-index: 150;
+}
+
+.header-menu .collapsed-account-panel-wrapper {
+	display: none;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.header-menu .account-panel-menu {
+	gap: 24px;
+}
+
+.header-menu .login-panel-button-open {
+	display: none !important;
+}
+
+.burger-button {
+	display: none !important;
+}
+
+.close-button {
+	align-self: flex-end;
+	display: none !important;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------- Account panel ------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+.account-panel-wrapper {
+	padding-top: 10px;
+
+	right: var(--horizontal-padding-desktop);
+	top: calc(var(--header-height) - 20px);
+	position: absolute;
+	z-index: 100;
+
+	transition-delay: .5s;
+	transition-property: visibility;
+	visibility: hidden;
+}
+.account-panel-wrapper.visible {
+	transition-delay: 0s;
+	transition-property: visibility;
+	visibility: inherit;
+}
+
+.account-panel {
+	border-radius: 8px;
+	box-shadow: 0 0 5px;
+	padding: 16px 24px;
+
+	background-color: var(--default-background-color);
+
+	display: flex;
+	flex-direction: column;
+}
+
+.account-panel:after {
+	content: " ";
+	position: absolute;
+	right: 21px;
+	top: 0;
+	border-top: none;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid white;
+}
+
+.account-panel-menu {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	list-style: none;
+}
+
+.account-panel-wrapper .form-label-submit {
+	padding-top: 16px;
+}
+
+.account-panel-button-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------- RESPONSIVITY -------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+@media (max-width: 1000px) {
+	.header-account-toggle {
+		display: none;
+	}
+
+	.burger-button {
+		display: flex !important;
+	}
+
+	.header-menu {
+		box-sizing: border-box;
+		height: 100%;
+		overflow: scroll;
+		padding: 32px var(--horizontal-padding-desktop);
+		width: 100%;
+
+		background-color: var(--first-color);
+
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		left: 0;
+		top: 0;
+		position: fixed;
+
+		opacity: 0;
+		transition: opacity .3s, visibility .3s;
+		visibility: hidden;
+	}
+
+	.header-menu.displayed {
+		opacity: 1;
+		transition: opacity .3s;
+		visibility: inherit;
+	}
+
+	.header-menu.stop-transition {
+		transition: none !important;
+	}
+
+	.close-button {
+		display: flex !important;
+	}
+
+	.header-menu .collapsed-account-panel-wrapper {
+		display: flex;
+	}
+
+	.header-menu .header-navigation .link {
+		height: 30px;
+	}
+
+	.header-menu .header-navigation .link.current-page {
+		border-width: 4px;
+		margin-bottom: -4px;
+	}
+
+	.header-menu .header-navigation .link.no-underline {
+		border-bottom: 1px solid;
+	}
+
+	.header-menu .login-panel-button-open {
+		display: flex !important;
+	}
+
+	.header-navigation {
+		margin-top: 16px;
+
+		flex-direction: column;
+	}
+}
