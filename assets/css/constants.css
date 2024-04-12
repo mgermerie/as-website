@@ -1,0 +1,59 @@
+:root {
+
+	--turkey-red: #b20000;
+	--white: #ffffff;
+	--dim-gray: #666666;
+	--sandy-brown: #ee964b;
+	--raisin-black: #1b1b24;
+	--anti-flash-white: #eeeeee;
+
+	--dark-orange: #ff8e2b;
+	--auburn: #b23333ff;
+	--persian-orange: #de9151ff;
+	--silver: #bbb8b2ff;
+	--powder-blue: #b4c5e4ff;
+
+
+	--auburn-filter:	invert(16%)
+						sepia(60%)
+						saturate(4895%)
+						hue-rotate(353deg)
+						brightness(77%)
+						contrast(122%);
+	--white-filter:	invert(100%)
+					sepia(0%)
+					saturate(1%)
+					hue-rotate(225deg)
+					brightness(108%)
+					contrast(101%);
+
+
+	--first-color: var(--turkey-red);
+	--hover-first-color: #ebebeb;
+	--contrasted-first-color: var(--white);
+	--filter-first-color: var(--auburn-filter);
+	--contrasted-filter-first-color: var(--filter-second-color);
+
+	--second-color: var(--white);
+	--hover-second-color: #c61414;
+	--contrasted-second-color: var(--turkey-red);
+	--filter-second-color: var(--white-filter);
+	--contrasted-filter-second-color: var(--filter-first-color);
+
+
+	--third-color: var(--dim-gray);
+	--fourth-color: var(--sandy-brown);
+	--fifth-color: var(--raisin-black);
+
+	--alert-color: var(--turkey-red);
+	--hover-color: rgba(23, 23, 23, 0.64);
+	--default-background-color: var(--white);
+
+
+	--header-height: 72px;
+	--footer-height: 56px;
+
+	--horizontal-padding-desktop: 40px;
+
+}
+

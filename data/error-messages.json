@@ -1,0 +1,34 @@
+{
+    "database_connection": {
+        "title": "Erreur",
+        "message": [
+            "Erreur de connexion à la base de données. Merci de réessayer ultérieurement.",
+            "Si le problème persiste, veuillez nous contacter à l'adresse indiquée en bas de page."
+        ]
+    },
+    "database_error": {
+        "title": "Erreur",
+        "message": [
+            "Une erreur est survenue sur le serveur de base de données. Merci de réessayer ultérieurement.",
+            "Si le problème persiste, veuillez nous contacter à l'adresse indiquée en bas de page."
+        ]
+    },
+    "credentials_unknown": {
+        "title": "Erreur",
+        "message": [
+            "Votre identifiant ou votre mot de passe est incorrect."
+        ]
+    },
+    "credentials_email_exists": {
+        "title": "Erreur",
+        "message": [
+            "Un compte a déjà été créé avec cette adresse mail."
+        ]
+    },
+    "credentials_team_exists": {
+        "title": "Erreur",
+        "message": [
+            "Une équipe a déjà été créée avec ce nom."
+        ]
+    }
+}

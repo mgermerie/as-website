@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Accueil",
+        "tag": "home",
+		"link": "./"
+    },
+    {
+        "name": "Informations / Règlement",
+        "tag": "information",
+		"link": "./?action=information"
+    },
+    {
+        "name": "Calendrier",
+        "tag": "calendar",
+		"link": "./?action=calendar"
+    },
+    {
+        "name": "Participants",
+        "tag": "contestants",
+		"link": "./?action=contestants"
+    },
+    {
+        "name": "Résultats",
+        "tag": "results",
+		"link": "./?action=results"
+    }
+]
