@@ -50,8 +50,10 @@
 						<div class="contestants-page-members-wrapper in-card">
 <?php						foreach ( $team['members'] as $member ) { ?>
 								<p class="contestants-page-member">
-<?php								echo $member['first_name'].' '
-										.$member['name']; ?>
+<?php								echo $member['first_name'].' '; ?>
+									<span class="contestant-page-member-name">
+<?php									echo $member['name']; ?>
+									</span>
 								</p>
 <?php						} ?>
 						</div>
@@ -102,8 +104,10 @@
 
 <?php		foreach ( $teamLessUsers as $member ) { ?>
 				<p class="contestants-page-member">
-<?php				echo $member['first_name'].' '
-						.$member['name']; ?>
+<?php				echo $member['first_name'].' '; ?>
+					<span class="contestants-page-member-name">
+<?php					echo $member['name']; ?>
+					</span>
 				</p>
 <?php		} ?>
 
