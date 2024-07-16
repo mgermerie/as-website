@@ -44,37 +44,16 @@
 							Membres de l'équipe
 						</h4>
 
-<!-- TEMP : label layout
--->
-
 						<div class="contestants-page-members-wrapper in-card">
 <?php						foreach ( $team['members'] as $member ) { ?>
 								<p class="contestants-page-member">
 <?php								echo $member['first_name'].' '; ?>
-									<span class="contestant-page-member-name">
+									<span class="contestants-page-member-name">
 <?php									echo $member['name']; ?>
 									</span>
 								</p>
 <?php						} ?>
 						</div>
-
-<!-- TEMP : table layout
-
-						<table class="team-card-members">
-							<tbody>
-<?php							foreach ( $team['members'] as $member ) { ?>
-									<tr class="team-card-members-row">
-										<td class="team-card-members-left-column">
-<?php										echo $member['first_name']; ?>
-										</td>
-										<td class="team-card-members-right-column">
-<?php										echo $member['name']; ?>
-										</td>
-									</tr>
-<?php							} ?>
-							</tbody>
-						</table>
--->
 
 					</section>
 

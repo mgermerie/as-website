@@ -51,8 +51,6 @@
 	text-align: center;
 }
 
-/* TEMP : label layout */
-
 .contestants-page-members-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -82,33 +80,4 @@
 .contestants-page-member-name {
 	text-transform: uppercase;
 }
-
-/* TEMP : table layout */
-
-.team-card-members {
-	border-spacing: 0;
-	table-layout: fixed;
-	width: 100%;
-
-	font-size: 18px;
-}
-
-.team-card-members-row:nth-child(odd) {
-	background-color: var(--anti-flash-white);
-}
-
-.team-card-members-left-column {
-	border-right: 1px solid var(--anti-flash-white);
-	padding-right: 8px;
-
-	text-align: right;
-}
-
-.team-card-members-right-column {
-	padding-left: 8px;
-
-	font-weight: bold;
-}
-
-/* TEMP : end TEMP */
 
