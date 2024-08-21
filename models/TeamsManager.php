@@ -39,6 +39,13 @@ class TeamsManager
 		return $this->database->get_team_from_name( $teamName )[0];
 	}
 
+	function get_team_leader_name (
+		$team,
+	)
+	{
+		return $this->database->get_user_name_from_id( $team['leader_id'] )[0];
+	}
+
 
 	function create_team (
 		$teamName,
@@ -69,11 +76,19 @@ class TeamsManager
 	}
 
 
-	function get_team_members(
+	function get_team_members (
 		$team,
 	)
 	{
 		return $this->database->get_team_members_from_team_id( $team['id'] );
+	}
+
+
+	function get_refered_events (
+		$team,
+	)
+	{
+		return $this->database->get_events_with_team_referee( $team['id'] );
 	}
 }
 

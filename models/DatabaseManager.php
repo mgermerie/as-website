@@ -71,6 +71,19 @@ class DatabaseManager
 	}
 
 
+	function get_user_name_from_id (
+		$userId,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT name, first_name
+				FROM users
+				WHERE id = :user_id",
+			[ ':user_id' => $userId ],
+		)->fetchAll();
+	}
+
+
 	function add_new_user (
 		$name,
 		$firstName,
@@ -187,6 +200,8 @@ class DatabaseManager
 				ORDER BY name",
 		)->fetchAll();
 	}
+
+
 
 
 	function get_events ()
@@ -385,6 +400,27 @@ class DatabaseManager
 				WHERE event_id=:eventId",
 			[ ':eventId' => $eventId ],
 		);
+	}
+
+
+	function get_events_with_team_referee(
+		$teamId,
+	)
+	{
+		$this->execute_statement(
+			"SET lc_time_names = 'fr_FR'",
+		);
+		return $this->execute_statement(
+			"SELECT events.title,
+					DAY(events.start) as day,
+					DAYNAME(events.start) as day_name,
+					MONTHNAME(events.start) as month_name
+				FROM events
+				LEFT JOIN team_referee_registration
+				ON events.id=team_referee_registration.event_id
+				WHERE team_referee_registration.team_id=:team_id",
+			[ ':team_id' => $teamId ],
+		)->fetchAll();
 	}
 }
 
