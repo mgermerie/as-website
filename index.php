@@ -38,6 +38,11 @@ else if ( $_GET['action'] === 'personalResults' )
 	require_once( './controllers/personalResults.php' );
 	$_SESSION['lastLoadedPage'] = 'index.php?action=personalResults';
 }
+else if ( $_GET['action'] === 'team' )
+{
+	require_once( './controllers/team.php' );
+	$_SESSION['lastLoadedPage'] = 'index.php?action=team';
+}
 else if ( $_GET['action'] === '505' )
 {
 	require_once( './controllers/505.php' );

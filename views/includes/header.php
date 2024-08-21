@@ -57,7 +57,7 @@
 							Mes résultats
 						</a>
 					</li>
-<?php 				if ( is_null( $_SESSION['LOGGED_USER']['team'] ) ) { ?>
+<?php 				if ( is_null( $_SESSION['LOGGED_USER']['teamId'] ) ) { ?>
 						<li>
 							<a	class="link second-color"
 								href="/?action=authentification&requestTeamRegister"
@@ -66,6 +66,17 @@
 									--before-image: url('/assets/icons/people.svg');
 								">
 								Rejoindre une équipe
+							</a>
+						</li>
+<?php 				} else { ?>
+						<li>
+							<a	class="link second-color"
+								href="/?action=team"
+								title="Mon équipe"
+								style="
+									--before-image: url('/assets/icons/people.svg');
+								">
+								Mon équipe
 							</a>
 						</li>
 <?php 				} ?>
@@ -195,7 +206,7 @@
 						Mes résultats
 					</a>
 				</li>
-<?php 			if ( is_null( $_SESSION['LOGGED_USER']['team'] ) ) { ?>
+<?php 			if ( is_null( $_SESSION['LOGGED_USER']['teamId'] ) ) { ?>
 					<li>
 						<a	class="link first-color no-underline"
 							href="/?action=authentification&requestTeamRegister"
@@ -206,7 +217,18 @@
 							Rejoindre une équipe
 						</a>
 					</li>
-<?php 			} ?>
+<?php 			} else { ?>
+					<li>
+						<a	class="link first-color no-underline"
+							href="/?action=team"
+							title="Mon équipe"
+							style="
+								--before-image: url('/assets/icons/people.svg');
+							">
+							Mon équipe
+						</a>
+					</li>
+<?php			} ?>
 			</ul>
 
 			<form	action="?action=authentification"
