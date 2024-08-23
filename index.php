@@ -4,6 +4,9 @@
 session_start();
 
 
+require_once( './models/basics.php' );
+
+
 if ( !isset( $_GET['action'] ) || $_GET['action'] === '' )
 {
 	require_once( './controllers/homepage.php' );
@@ -35,13 +38,27 @@ else if ( $_GET['action'] === 'information' )
 }
 else if ( $_GET['action'] === 'personalResults' )
 {
-	require_once( './controllers/personalResults.php' );
-	$_SESSION['lastLoadedPage'] = 'index.php?action=personalResults';
+	if ( isset( $_SESSION['LOGGED_USER'] ) )
+	{
+		require_once( './controllers/personalResults.php' );
+		$_SESSION['lastLoadedPage'] = 'index.php?action=personalResults';
+	}
+	else
+	{
+		redirect( 'index.php' );
+	}
 }
 else if ( $_GET['action'] === 'team' )
 {
-	require_once( './controllers/team.php' );
-	$_SESSION['lastLoadedPage'] = 'index.php?action=team';
+	if ( isset( $_SESSION['LOGGED_USER'] ) )
+	{
+		require_once( './controllers/team.php' );
+		$_SESSION['lastLoadedPage'] = 'index.php?action=team';
+	}
+	else
+	{
+		redirect( 'index.php' );
+	}
 }
 else if ( $_GET['action'] === '505' )
 {
