@@ -18,12 +18,24 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
     {
         $database = new DatabaseManager( ['on_failure' => $defaultCallback] );
         $authManager = new AuthentificationManager( $database );
+        $teamsManager = new TeamsManager( $database );
 
         $authManager->login(
             $_POST['userMail'],
             $_POST['userPassword'],
             [
-                'on_success' => $defaultCallback,
+                'on_success' => function () use ( $teamsManager ) {
+                    if ( isset( $_SESSION['LOGGED_USER']['teamId'] ) )
+                    {
+                        $team = $teamsManager->get_team_from_id(
+                            $_SESSION['LOGGED_USER']['teamId']
+                        );
+                        $_SESSION['LOGGED_USER']['team'] = $team;
+                        $_SESSION['LOGGED_USER']['teamLeader'] =
+                            $team['leader_id'] == $_SESSION['LOGGED_USER']['id'];
+                    }
+                    redirect( $_SESSION['lastLoadedPage'] );
+                },
                 'on_failure' => $defaultCallback,
             ],
         );
@@ -87,7 +99,12 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
             $_SESSION['LOGGED_USER']['id'],
             $team['id'],
             [
-                'on_success' => $defaultCallback,
+                'on_success' => function () use ( $team ) {
+                    $_SESSION['LOGGED_USER']['team'] = $team;
+                    $_SESSION['LOGGED_USER']['teamLeader'] =
+                        $team['leader_id'] == $_SESSION['LOGGED_USER']['id'];
+                    redirect( $_SESSION['lastLoadedPage'] );
+                },
                 'on_failure' => $defaultCallback,
             ],
         );

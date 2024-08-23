@@ -38,9 +38,12 @@
 }
 
 .form-label-hint {
+	width: 100%;
+
 	color: var(--third-color);
 	font-size: 12px;
 	line-height: 1.25rem;
+	text-align: justify;
 }
 
 .form-label-hint.important {

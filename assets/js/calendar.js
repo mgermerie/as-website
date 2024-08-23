@@ -232,6 +232,14 @@ class Calendar {
 				// she cannot subscribe to this one
 				form.classList.add('cannot-register');
 			}
+			// If a team is already registered as referee to this event
+			if (eventProperties.team_id) {
+				if (eventProperties.team_id === this.#userInfo.teamId) {
+					form.classList.add('registered-referee');
+				} else {
+					form.classList.add('cannot-register-referee');
+				}
+			}
 
 			form.addEventListener(
 				'submit',
@@ -269,11 +277,30 @@ class Calendar {
 										return value.event_id != eventInfo.id;
 									}
 								);
+						} else if (response === 'registerRefereeSuccess') {
+							form.classList.remove('form-register-referee');
+							form.classList.add('registered-referee');
 						}
 						this.#fullCalendar.refetchEvents();
 					});
 				}).bind(this),
 			);
+
+			const registerRefereeButton = eventPanel.getElementById(
+				'register-referee-button',
+			);
+			const cancelRegisterRefereeButton = eventPanel.getElementById(
+				'cancel-register-referee-button',
+			);
+			if (registerRefereeButton && cancelRegisterRefereeButton) {
+				registerRefereeButton.onclick = function () {
+					form.classList.add('form-register-referee');
+				}
+				cancelRegisterRefereeButton.onclick = function (e) {
+					e.preventDefault();
+					form.classList.remove('form-register-referee');
+				}
+			}
 
 			const eventRemovalButton = eventPanel.getElementById(
 				'event-removal-button',

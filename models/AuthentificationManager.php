@@ -48,7 +48,7 @@ class AuthentificationManager
 			'email' => $user[0]['email'],
 			'name' => $user[0]['name'],
 			'firstName' => $user[0]['first_name'],
-			'team' => $user[0]['team'],
+			'teamId' => $user[0]['team'],
 			'isAdmin' => $user[0]['admin'],
 			'registeredEvents' => $this->database->get_register_events_for_user(
 				$user[0]['id'],
@@ -107,7 +107,7 @@ class AuthentificationManager
 	{
 		if ( $this->database->add_team_to_user( $userId, $teamId ) )
 		{
-			$_SESSION['LOGGED_USER']['team'] = $teamId;
+			$_SESSION['LOGGED_USER']['teamId'] = $teamId;
 			execute_callback( @$options['on_success'] );
 			return true;
 		}
