@@ -89,9 +89,6 @@ a.fc-event:hover {
 	gap: 8px;
 }
 
-.registered-as-referee {
-	font-weight: bold;
-}
 .unregister-user {
 	display: none;
 }
@@ -123,6 +120,42 @@ a.fc-event:hover {
 }
 
 
+.register-referee {
+	display: none;
+}
+.form-register-referee > .register-referee {
+	display: flex;
+}
+.form-register-referee > :not(.register-referee) {
+	display: none;
+}
+.form-register-referee ~ .button-register-referee {
+	display: none;
+}
+.cannot-register-referee-label {
+	display: none;
+
+	text-align: center;
+}
+.cannot-register-referee ~ .cannot-register-referee-label {
+	display: inline;
+}
+.cannot-register-referee ~ .button-register-referee {
+	display: none;
+}
+.registered-referee-label {
+	display: none;
+
+	text-align: center;
+}
+.registered-referee ~ .registered-referee-label {
+	display: inline;
+}
+.registered-referee ~ .button-register-referee {
+	display: none;
+}
+
+
 .remove-event {
 	display: none;
 }
@@ -132,7 +165,7 @@ a.fc-event:hover {
 .form-remove-event > :not(.remove-event) {
 	display: none;
 }
-.form-remove-event + .button-remove-event {
+.form-remove-event ~ .button-remove-event {
 	display: none;
 }
 

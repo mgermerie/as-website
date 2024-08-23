@@ -211,9 +211,13 @@ class DatabaseManager
 					events.location_id,
 					locations.name,
 					ST_X(locations.location) as latitude,
-					ST_Y(locations.location) as longitude
+					ST_Y(locations.location) as longitude,
+					team_referee_registration.team_id
 				FROM events
-				LEFT JOIN locations ON events.location_id=locations.id
+				LEFT JOIN locations
+					ON events.location_id=locations.id
+				LEFT JOIN team_referee_registration
+					ON events.id=team_referee_registration.event_id
 				WHERE start IS NOT NULL
 					AND end IS NOT NULL
 					AND start > :dateStart
@@ -240,9 +244,13 @@ class DatabaseManager
 					events.location_id,
 					locations.name,
 					ST_X(locations.location) as latitude,
-					ST_Y(locations.location) as longitude
+					ST_Y(locations.location) as longitude,
+					team_referee_registration.team_id
 				FROM events
-				LEFT JOIN locations ON events.location_id=locations.id
+				LEFT JOIN locations
+					ON events.location_id=locations.id
+				LEFT JOIN team_referee_registration
+					ON events.id=team_referee_registration.event_id
 				WHERE events.start IS NOT NULL
 					AND events.end IS NOT NULL
 					AND events.start > :dateStart
@@ -344,6 +352,23 @@ class DatabaseManager
 				WHERE events_registration.user_id=:userId",
 			[ ':userId' => $userId ],
 		)->fetchAll();
+	}
+
+
+	function register_referee_team_to_event (
+		$teamId,
+		$eventId,
+	)
+	{
+		return $this->execute_statement(
+			"INSERT INTO
+				team_referee_registration (event_id, team_id)
+				VALUES (:eventId, :teamId)",
+			[
+				':eventId' => $eventId,
+				':teamId' => $teamId,
+			],
+		);
 	}
 
 

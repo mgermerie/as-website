@@ -120,6 +120,27 @@ class EventsManager
 	}
 
 
+	function register_referee_team_to_event (
+		$teamId,
+		$eventId,
+		$options=[],
+	)
+	{
+		if ( $this->database->register_referee_team_to_event(
+			$teamId,
+			$eventId,
+		) )
+		{
+			execute_callback( @$options['on_success'] );
+			return true;
+		}
+
+		handle_error( 'database_error' );
+		execute_callback( @$options['on_failure'] );
+		return false;
+	}
+
+
 	function remove_event (
 		$eventId,
 		$options=[],
@@ -127,8 +148,7 @@ class EventsManager
 	{
 		if ( $this->database->remove_event( $eventId ) )
 		{
-			self::unregister_session_event( $eventId, true );
-			self::unregister_session_event( $eventId, false );
+			self::unregister_session_event( $eventId );
 			execute_callback( @$options['on_success'] );
 			return true;
 		}

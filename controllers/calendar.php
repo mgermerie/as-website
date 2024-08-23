@@ -107,6 +107,21 @@ else if (
             ],
         );
     }
+    else if ( isset( $_POST['registerReferee'] ) )
+    {
+        $eventsManager->register_referee_team_to_event(
+            $_SESSION['LOGGED_USER']['teamId'],
+            $_POST['eventId'],
+            [
+                'on_success' => function () {
+                    echo 'registerRefereeSuccess';
+                },
+                'on_failure' => function () {
+                    echo 'error';
+                },
+            ],
+        );
+    }
     else if ( isset( $_POST['removeEvent'] ) )
     {
         $eventsManager->remove_event(
