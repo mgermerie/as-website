@@ -208,6 +208,14 @@ class DatabaseManager
 	}
 
 
+	function get_users () {
+		return $this->execute_statement(
+			"SELECT id, name, first_name
+				FROM users",
+		)->fetchAll();
+	}
+
+
 	function get_teamless_users ()
 	{
 		return $this->execute_statement(
@@ -420,7 +428,7 @@ class DatabaseManager
 	}
 
 
-	function get_events_with_team_referee(
+	function get_events_with_team_referee (
 		$teamId,
 	)
 	{
@@ -434,9 +442,31 @@ class DatabaseManager
 					MONTHNAME(events.start) as month_name
 				FROM events
 				LEFT JOIN team_referee_registration
-				ON events.id=team_referee_registration.event_id
+					ON events.id=team_referee_registration.event_id
 				WHERE team_referee_registration.team_id=:team_id",
 			[ ':team_id' => $teamId ],
+		)->fetchAll();
+	}
+
+
+
+
+	function get_results ()
+	{
+		return $this->execute_statement(
+			"SELECT events.title,
+					events.team_event,
+					users.first_name,
+					users.name,
+					teams.name as team,
+					results.performance_number,
+					results.performance_distance,
+					results.performance_time,
+					results.score
+				FROM results
+				LEFT JOIN events ON results.event_id=events.id
+				LEFT JOIN users ON results.user_id=users.id
+				LEFT JOIN teams ON users.team=teams.id",
 		)->fetchAll();
 	}
 }

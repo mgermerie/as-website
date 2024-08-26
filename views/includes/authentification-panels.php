@@ -219,11 +219,13 @@
 						<option value="" selected disabled hidden>
 							Sélectionner une équipe
 						</option>
-<?php					foreach ( $teamsList as $team ) { ?>
-							<option value=
-<?php 									echo $team["id"] ?>>
-<?php 							echo $team["name"] ?>
-							</option>
+<?php 					if ( isset( $teamsList) ) { ?>
+<?php						foreach ( $teamsList as $team ) { ?>
+								<option value=
+<?php 										echo $team["id"] ?>>
+<?php 										echo $team["name"] ?>
+								</option>
+<?php						} ?>
 <?php					} ?>
 					</select>
 				</label>

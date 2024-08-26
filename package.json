@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "fullcalendar": "^6.1.13",
+    "gridjs": "^6.2.0",
     "sass": "^1.77.5"
   }
 }

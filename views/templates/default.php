@@ -2,6 +2,7 @@
 <html lang="fr">
 
 	<head>
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -9,6 +10,11 @@
 
 		<link rel="stylesheet" href="./assets/styles/constants.css">
 		<link rel="stylesheet" href="./assets/styles/style.css">
+
+<?php	if ( isset( $pageHead ) ) { ?>
+<?php		echo $pageHead ?>
+<?php	} ?>
+
 	</head>
 
 	<body>
