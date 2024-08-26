@@ -63,7 +63,7 @@ class Calendar {
 			Calendar.getEventTypes(),
 		]).then((result) => {
 			[this.#userInfo, this.#eventTypes] = result;
-			this.#fullCalendar = this.setupCalendar(this.#domContainer);
+			this.#fullCalendar = this.setupCalendar();
 		});
 	}
 
@@ -415,17 +415,4 @@ new Calendar(
 		}
 	},
 );
-
-
-async function getSession() {
-	return await fetch(
-		'index.php?action=calendar&requestUserInfo',
-	).then(response => response.json());
-}
-
-async function test() {
-	return await fetch(
-		'index.php?action=calendar&eventType=Fléchettes',
-	).then(response => response.text());
-}
 

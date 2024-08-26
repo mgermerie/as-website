@@ -1,22 +1,65 @@
 <?php ob_start(); ?>
 
+<link rel="stylesheet" href="/node_modules/gridjs/dist/theme/mermaid.min.css">
+
+<?php $pageHead = ob_get_clean(); ?>
+
+
+<?php ob_start(); ?>
+
 
 <div class="page-content-wrapper">
 
 
-	<div class="page-banner">
+	<div class="page-banner has-tabs-bar">
 		<h1 class="page-title">
 			Résultats
 		</h1>
+
+		<ul class="page-tabs-bar">
+
+			<li class="page-tab-name">
+				<button	class="page-tab-button active"
+						id="tab-individual-results-button">
+					Épreuves individuelles
+				</button>
+			</li>
+
+			<li class="page-tab-name">
+				<button	class="page-tab-button"
+						id="tab-team-results-button">
+					Épreuves par équipe
+				</button>
+			</li>
+
+		</ul>
 	</div>
 
-	<section class="page-section only-page-section">
-		<h2 class="page-section-title no-data-available
-				results-page-section-title">
-			Il n'y a pas encore de résultats à afficher...
+	<section	class="page-section page-tab"
+				id="tab-individual-results">
+		<h2 class="page-section-title">
+			Résultats des épreuves individuelles
 		</h2>
+		<div id="results-container"></div>
 	</section>
+
+	<section	class="page-section page-tab"
+				id="tab-team-results">
+		<h2 class="page-section-title">
+			Résultats des épreuves par équipe
+		</h2>
+		<div id="results-container-team"></div>
+	</section>
+
 </div>
+
+
+<script src="/node_modules/gridjs/dist/gridjs.production.min.js"></script>
+
+<script src="/assets/js/results.js"></script>
+<script src="/assets/js/tabs.js"></script>
+<script src="/assets/js/tabs-results.js"></script>
+
 
 <?php $pageContent = ob_get_clean(); ?>
 
