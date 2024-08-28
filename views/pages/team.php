@@ -107,7 +107,7 @@
 
 		<div class="info-page-section-content-wrapper">
 			<p class="info-page-section-text">
-				Votre responsable d'éqipe est
+				Votre responsable d'équipe est
 				<span class="contestants-page-member">
 <?php				echo $teamLeader['first_name']; ?>
 					<span class="contestants-page-member-name">
