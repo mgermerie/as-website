@@ -41,7 +41,7 @@
 						</label>
 
 						<label class="form-label">
-							Votre mot de passe temporaire*
+							Votre mot de passe actuel*
 							<input	class="form-input form-input-text"
 									type="password"
 									name="userTempPassword">
