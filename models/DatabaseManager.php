@@ -105,6 +105,23 @@ class DatabaseManager
 	}
 
 
+	function update_user_password (
+		$userId,
+		$hashedPassword,
+	)
+	{
+		return $this->execute_statement(
+			"UPDATE users
+				SET password=:hashedPassword
+				WHERE id=:userId",
+			[
+				':hashedPassword' => $hashedPassword,
+				':userId' => $userId,
+			],
+		);
+	}
+
+
 	function add_team_to_user (
 		$userId,
 		$teamId,

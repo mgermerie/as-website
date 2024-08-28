@@ -60,6 +60,9 @@ else if ( $_GET['action'] === 'team' )
 		redirect( 'index.php' );
 	}
 }
+else if ( $_GET['action'] === 'passwordReset' ) {
+	require_once( './controllers/passwordReset.php' );
+}
 else if ( $_GET['action'] === '505' )
 {
 	require_once( './controllers/505.php' );
