@@ -99,6 +99,32 @@ class AuthentificationManager
 	}
 
 
+	function reset_password (
+		$userId,
+		$newPassword,
+		$options=[],
+	)
+	{
+		$hashedPassword = password_hash(
+			$newPassword,
+			PASSWORD_DEFAULT,
+		);
+
+		if ( $this->database->update_user_password(
+			$userId,
+			$hashedPassword,
+		) )
+		{
+			execute_callback( @$options['on_success'] );
+			return true;
+		}
+
+		handle_error( 'database_error' );
+		execute_callback( @$options['on_failure'] );
+		return false;
+	}
+
+
 	function register_team (
 		$userId,
 		$teamId,
