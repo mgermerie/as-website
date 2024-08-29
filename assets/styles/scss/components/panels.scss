@@ -44,6 +44,11 @@
 	position: relative;
 }
 
+.panel.large-panel {
+	min-width: 480px;
+	width: 80%;
+}
+
 .panel .button {
 	align-self: stretch;
 }

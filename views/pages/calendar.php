@@ -55,6 +55,7 @@
 
 <template id="event-filter-template">
 	<label class="calendar-filter-label">
+		<span id="event-filter-name"></span>
 		<input type="checkbox" checked>
 	</label>
 </template>
@@ -303,7 +304,9 @@
 		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 		crossorigin=""></script>
 
-<script src="/assets/js/calendar.js"></script>
+<script src="/assets/js/calendar/Calendar.js"></script>
+
+<script src="/assets/js/pages/calendar.js"></script>
 
 
 <?php $pageContent = ob_get_clean(); ?>

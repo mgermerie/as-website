@@ -32,17 +32,21 @@ class Tab {
 	}
 }
 
+
 class TabsManager {
 	#tabs;
+	#onTabChange;
 
-	constructor(tabs) {
+	constructor(tabs, onTabChange=()=>{}) {
 		this.#tabs = tabs;
+		this.#onTabChange = onTabChange;
 
 		this.#tabs.map((tab) => {
 			tab.tabButton.addEventListener('click', () => {
 				this.deactivateAllTabs();
 				tab.activate();
 				this.updateAllTabs();
+				this.#onTabChange();
 			});
 		});
 	}

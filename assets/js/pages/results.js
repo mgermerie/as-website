@@ -1,26 +1,3 @@
-const GRID_BASE_OPTIONS = {
-	search: true,
-	fixedHeader: true,
-	sort: true,
-	pagination: {
-		limit: 50,
-	},
-	language: {
-		search: {
-			placeholder: 'Chercher une épreuve, un nom...',
-		},
-		pagination: {
-			previous: 'Précédent',
-			next: 'Suivant',
-			showing: 'Affichage de',
-			results: 'résultats',
-			to: 'à',
-			of: 'des',
-		},
-	},
-}
-
-
 function formatPerformance(result) {
 	if (result.performance_number !== null) {
 		return result.performance_number + ' points';
@@ -32,44 +9,9 @@ function formatPerformance(result) {
 }
 
 
-class ResultsTable {
-	#grid;
-	#domContainer;
-	#gridData;
-	#columns;
-	#formatData;
-
-	constructor(domContainer, columns, formatData) {
-		this.#domContainer = domContainer;
-		this.#columns = columns;
-		this.#formatData = formatData;
-
-		this.#grid = this.setupGrid()
-	}
-
-
-	setupGrid() {
-		const grid = new gridjs.Grid(
-			Object.assign({}, GRID_BASE_OPTIONS, {
-				columns: this.#columns,
-				server: {
-					url: 'index.php?action=results&requestResults',
-					then: (data) => {
-						return this.#formatData(data);
-					}
-				},
-			}),
-		);
-
-		grid.render(this.#domContainer);
-
-		return grid;
-	}
-}
-
-
-new ResultsTable(
+new Table(
 	document.getElementById('results-container'),
+	'index.php?action=results&requestResults',
 	[
 		'Épreuve',
 		'Participant',
@@ -89,10 +31,13 @@ new ResultsTable(
 				input.score,
 			];
 		}),
+	{ search: true },
 );
 
-new ResultsTable(
+
+new Table(
 	document.getElementById('results-container-team'),
+	'index.php?action=results&requestResults',
 	[
 		'Épreuve',
 		'Équipe',
@@ -109,5 +54,17 @@ new ResultsTable(
 				|| input.performance_time,
 			input.score,
 		]),
+	{ search: true },
 );
 
+
+new TabsManager([
+	new Tab(
+		document.getElementById('tab-individual-results'),
+		document.getElementById('tab-individual-results-button'),
+	),
+	new Tab(
+		document.getElementById('tab-team-results'),
+		document.getElementById('tab-team-results-button'),
+	),
+]);

@@ -64,6 +64,13 @@ class EventsManager
 		return $this->database->get_distinct_events_with_locations();
 	}
 
+	function get_dates_for_event_type (
+		$eventType,
+	)
+	{
+		return $this->database->get_dates_for_event_type( $eventType );
+	}
+
 
 	function register_user_to_event (
 		$userId,
@@ -156,6 +163,14 @@ class EventsManager
 		handle_error( 'database_error' );
 		execute_callback( @$options['on_failure'] );
 		return false;
+	}
+
+
+	function get_registered_users_for_event (
+		$eventId,
+	)
+	{
+		return $this->database->get_registered_users_for_event( $eventId );
 	}
 
 

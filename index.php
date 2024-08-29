@@ -60,6 +60,22 @@ else if ( $_GET['action'] === 'team' )
 		redirect( 'index.php' );
 	}
 }
+else if ( $_GET['action'] === 'admin' )
+{
+	if (
+		isset( $_SESSION['LOGGED_USER'] )
+		&& isset( $_SESSION['LOGGED_USER']['isAdmin'] )
+		&& $_SESSION['LOGGED_USER']['isAdmin']
+	)
+	{
+		require_once( './controllers/admin.php' );
+		$_SESSION['lastLoadedPage'] = 'index.php?action=admin';
+	}
+	else
+	{
+		redirect( 'index.php' );
+	}
+}
 else if ( $_GET['action'] === 'passwordReset' ) {
 	require_once( './controllers/passwordReset.php' );
 }

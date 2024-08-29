@@ -252,12 +252,15 @@ class DatabaseManager
 					locations.name,
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
-					team_referee_registration.team_id
+					team_referee_registration.team_id,
+					teams.name as team_name
 				FROM events
 				LEFT JOIN locations
 					ON events.location_id=locations.id
 				LEFT JOIN team_referee_registration
 					ON events.id=team_referee_registration.event_id
+				LEFT JOIN teams
+					ON team_referee_registration.team_id=teams.id
 				WHERE start IS NOT NULL
 					AND end IS NOT NULL
 					AND start > :dateStart
@@ -285,12 +288,15 @@ class DatabaseManager
 					locations.name,
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
-					team_referee_registration.team_id
+					team_referee_registration.team_id,
+					teams.name as team_name
 				FROM events
 				LEFT JOIN locations
 					ON events.location_id=locations.id
 				LEFT JOIN team_referee_registration
 					ON events.id=team_referee_registration.event_id
+				LEFT JOIN teams
+					ON team_referee_registration.team_id=teams.id
 				WHERE events.start IS NOT NULL
 					AND events.end IS NOT NULL
 					AND events.start > :dateStart
@@ -345,6 +351,19 @@ class DatabaseManager
 	}
 
 
+	function get_dates_for_event_type (
+		$eventType,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT start
+				FROM events
+				WHERE title=:eventType",
+			[ ':eventType' => $eventType ],
+		)->fetchAll();
+	}
+
+
 	function register_user_to_event (
 		$userId,
 		$eventId,
@@ -391,6 +410,23 @@ class DatabaseManager
 				LEFT JOIN events ON events_registration.event_id=events.id
 				WHERE events_registration.user_id=:userId",
 			[ ':userId' => $userId ],
+		)->fetchAll();
+	}
+
+
+	function get_registered_users_for_event (
+		$eventId,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT users.first_name,
+					users.name,
+					teams.name as team
+				FROM events_registration
+				LEFT JOIN users ON events_registration.user_id=users.id
+				LEFT JOIN teams ON users.team=teams.id
+				WHERE events_registration.event_id=:eventId",
+			[ ':eventId' => $eventId ],
 		)->fetchAll();
 	}
 
@@ -467,6 +503,28 @@ class DatabaseManager
 				LEFT JOIN events ON results.event_id=events.id
 				LEFT JOIN users ON results.user_id=users.id
 				LEFT JOIN teams ON users.team=teams.id",
+		)->fetchAll();
+	}
+
+
+	function get_results_for_event (
+		$eventId,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT users.first_name,
+					users.name,
+					teams.name as team,
+					results.performance_number,
+					results.performance_distance,
+					results.performance_time,
+					results.score
+				FROM results
+				LEFT JOIN users ON results.user_id=users.id
+				LEFT JOIN teams ON users.team=teams.id
+				WHERE results.event_id=:eventId
+				ORDER BY results.id",
+			[ ':eventId' => $eventId ],
 		)->fetchAll();
 	}
 }
