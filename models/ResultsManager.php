@@ -22,4 +22,12 @@ class ResultsManager
 	{
 		return $this->database->get_results();
 	}
+
+
+	function get_results_for_event (
+		$eventId,
+	)
+	{
+		return $this->database->get_results_for_event( $eventId );
+	}
 }

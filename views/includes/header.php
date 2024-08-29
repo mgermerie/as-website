@@ -80,6 +80,20 @@
 							</a>
 						</li>
 <?php 				} ?>
+
+<?php 				if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] ) ) { ?>
+						<li>
+							<a	class="link second-color"
+								href="/?action=admin"
+								title="Espace administrateur"
+								style="
+									--before-image: url('/assets/icons/pencil-square.svg');
+								">
+								Espace administrateur
+							</a>
+						</li>
+<?php 				} ?>
+
 				</ul>
 
 				<form	class="account-panel-disconnect"
@@ -229,6 +243,19 @@
 						</a>
 					</li>
 <?php			} ?>
+
+<?php 			if ( $_SESSION['LOGGED_USER']['isAdmin'] ) { ?>
+					<li>
+						<a	class="link first-color no-underline"
+							href="/?action=admin"
+							title="Espace administrateur"
+							style="
+								--before-image: url('/assets/icons/pencil-square.svg');
+							">
+							Espace administrateur
+						</a>
+					</li>
+<?php 			} ?>
 			</ul>
 
 			<form	action="?action=authentification"
