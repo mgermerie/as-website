@@ -1,14 +1,3 @@
-function formatPerformance(result) {
-	if (result.performance_number !== null) {
-		return result.performance_number + ' points';
-	} else if (result.performance_distance !== null) {
-		return result.performance_distance + ' mètres';
-	} else if (result.performance_time !== null) {
-		return result.performance_time;
-	}
-}
-
-
 new Table(
 	document.getElementById('results-container'),
 	'index.php?action=results&requestResults',
@@ -22,11 +11,11 @@ new Table(
 	data => data
 		.filter(input => !input.team_event)
 		.map((input) => {
-			input.performance = formatPerformance(input);
+			input.performance += PERFORMANCES_FORMAT[input.title].unit;
 			return [
 				input.title,
 				input.first_name + ' ' + input.name,
-				input.team,
+				input.user_team,
 				input.performance,
 				input.score,
 			];
@@ -46,14 +35,15 @@ new Table(
 	],
 	data => data
 		.filter(input => input.team_event)
-		.map(input => [
-			input.title,
-			input.team,
-			input.performance_number
-				|| input.performance_distance
-				|| input.performance_time,
-			input.score,
-		]),
+		.map((input) => {
+			input.performance += PERFORMANCES_FORMAT[input.title].unit;
+			return [
+				input.title,
+				input.team,
+				input.performance,
+				input.score,
+			];
+		}),
 	{ search: true },
 );
 

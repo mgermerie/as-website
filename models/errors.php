@@ -44,6 +44,12 @@ function handle_error ( $error )
 		case 'credentials_team_exists':
 			array_push( $_SESSION['MESSAGE'], 'credentials_team_exists' );
 			break;
+		case 'user_unknown':
+			array_push( $_SESSION['MESSAGE'], 'user_unknown' );
+			break;
+		case 'team_unknown':
+			array_push( $_SESSION['MESSAGE'], 'team_unknown' );
+			break;
 	}
 }
 
