@@ -30,5 +30,17 @@
         "message": [
             "Une équipe a déjà été créée avec ce nom."
         ]
+    },
+    "user_unknown": {
+        "title": "Erreur",
+        "message": [
+            "Aucun joueur inscrit avec ce nom."
+        ]
+    },
+    "team_unknown": {
+        "title": "Erreur",
+        "message": [
+            "Aucune équipe inscrite avec ce nom."
+        ]
     }
 }

@@ -56,6 +56,8 @@
 
 <script src="/node_modules/gridjs/dist/gridjs.production.min.js"></script>
 
+<script src="/assets/js/constants.js"></script>
+
 <script src="/assets/js/table/Table.js"></script>
 <script src="/assets/js/tabs/Tabs.js"></script>
 

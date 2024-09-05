@@ -19,33 +19,37 @@
 
 			<li class="page-tab-name">
 				<button	class="page-tab-button active"
-						id="tab-event-registration-button">
-					Voir les inscriptions
+						id="tab-add-results-button">
+					Ajouter des résultats
 				</button>
 			</li>
 
 			<li class="page-tab-name">
 				<button	class="page-tab-button"
-						id="tab-add-results-button">
-					Ajouter des résultats
+						id="tab-event-registration-button">
+					Voir les inscriptions
 				</button>
 			</li>
 
 		</ul>
 	</div>
 
-<?php require_once( './views/includes/admin-space/show-registrations.php' ); ?>
 <?php require_once( './views/includes/admin-space/insert-result.php' ); ?>
+<?php require_once( './views/includes/admin-space/show-registrations.php' ); ?>
 
 </div>
 
 
 <script src="node_modules/fullcalendar/index.global.min.js"></script>
 <script src="/node_modules/gridjs/dist/gridjs.production.min.js"></script>
+<script src="/node_modules/read-excel-file/bundle/read-excel-file.min.js"></script>
 
-<script src="/assets/js/tabs/Tabs.js"></script>
+<script src="/assets/js/constants.js"></script>
+
 <script src="/assets/js/calendar/Calendar.js"></script>
 <script src="/assets/js/table/Table.js"></script>
+<script src="/assets/js/tabs/Tabs.js"></script>
+<script src="/assets/js/score-calculator/ScoreCalculator.js"></script>
 
 <script src="/assets/js/pages/admin.js"></script>
 

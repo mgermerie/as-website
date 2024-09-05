@@ -17,7 +17,8 @@
 	<section class="page-section only-page-section">
 		<h2 class="page-section-title no-data-available
 				results-page-section-title">
-			Il n'y a pas encore de résultats à afficher...
+			Le développement de cette page n'est pas encore fini. Merci de
+			patienter encore un peu...
 		</h2>
 	</section>
 </div>

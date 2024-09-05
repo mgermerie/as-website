@@ -57,4 +57,9 @@ class Table {
 
 		return grid;
 	}
+
+
+	refresh() {
+		this.#grid.forceRender();
+	}
 }

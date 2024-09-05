@@ -84,6 +84,19 @@ class DatabaseManager
 	}
 
 
+	function get_user_from_name (
+		$userName,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT *
+				FROM users
+				WHERE CONCAT(first_name, ' ', name) = :user_name",
+			[ ':user_name' => $userName ],
+		)->fetchAll();
+	}
+
+
 	function add_new_user (
 		$name,
 		$firstName,
@@ -252,6 +265,7 @@ class DatabaseManager
 					locations.name,
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
+					events.team_event,
 					team_referee_registration.team_id,
 					teams.name as team_name
 				FROM events
@@ -288,6 +302,7 @@ class DatabaseManager
 					locations.name,
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
+					events.team_event,
 					team_referee_registration.team_id,
 					teams.name as team_name
 				FROM events
@@ -494,15 +509,15 @@ class DatabaseManager
 					events.team_event,
 					users.first_name,
 					users.name,
-					teams.name as team,
-					results.performance_number,
-					results.performance_distance,
-					results.performance_time,
+					teams.name as user_team,
+					team_names.name as team,
+					results.performance,
 					results.score
 				FROM results
 				LEFT JOIN events ON results.event_id=events.id
 				LEFT JOIN users ON results.user_id=users.id
-				LEFT JOIN teams ON users.team=teams.id",
+				LEFT JOIN teams ON users.team=teams.id
+				LEFT JOIN teams as team_names ON results.team_id=team_names.id",
 		)->fetchAll();
 	}
 
@@ -514,18 +529,47 @@ class DatabaseManager
 		return $this->execute_statement(
 			"SELECT users.first_name,
 					users.name,
-					teams.name as team,
-					results.performance_number,
-					results.performance_distance,
-					results.performance_time,
+					teams.name as user_team,
+					team_names.name as team,
+					results.performance,
 					results.score
 				FROM results
 				LEFT JOIN users ON results.user_id=users.id
 				LEFT JOIN teams ON users.team=teams.id
+				LEFT JOIN teams as team_names ON results.team_id=team_names.id
 				WHERE results.event_id=:eventId
-				ORDER BY results.id",
+				ORDER BY results.id DESC",
 			[ ':eventId' => $eventId ],
 		)->fetchAll();
+	}
+
+
+	function add_result (
+		$eventId,
+		$userId,
+		$teamId,
+		$performance,
+		$score,
+		$adminId,
+	)
+	{
+		return $this->execute_statement(
+			"INSERT INTO
+				results (
+					event_id, user_id, team_id, performance, score, admin_id
+				)
+				VALUES (
+					:eventId, :userId, :teamId, :performance, :score, :adminId
+				)",
+			[
+				':eventId' => $eventId,
+				':userId' => $userId,
+				':teamId' => $teamId,
+				':performance' => $performance,
+				':score' => $score,
+				':adminId' => $adminId,
+			],
+		);
 	}
 }
 
