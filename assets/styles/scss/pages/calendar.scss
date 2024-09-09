@@ -116,7 +116,7 @@ a.fc-event:hover {
 .cannot-register .cannot-register-label {
 	display: inline;
 }
-.cannot-register .event-register-button {
+.cannot-register .event-register-button:not(.team-register-button) {
 	display: none;
 }
 

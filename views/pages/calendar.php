@@ -196,7 +196,7 @@
 						</span>
 						<input	class="button first-color full-button
 									form-input form-input-submit
-									event-register-button"
+									event-register-button team-register-button"
 								type="submit"
 								name="registerReferee"
 								value="Confirmer l'inscription">
