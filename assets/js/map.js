@@ -111,6 +111,11 @@ class EventsMap {
 		const sortedEvents = {}
 
 		for (const event of eventsWithLocations) {
+			// TODO : CODE THIS PROPERLY ELSEWHERE
+			if (event.title === "Cérémonie de clôture") {
+				continue;
+			}
+
 			// If event is already added to the list, just sort its location
 			if (sortedEvents.hasOwnProperty(event.title)) {
 				if (!sortedEvents[event.title].locationIds.includes(

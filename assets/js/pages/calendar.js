@@ -207,6 +207,14 @@ function onEventClick(eventClickInfo) {
 	document.body.appendChild(
 		eventPanel.getElementById('event-panel-wrapper'),
 	);
+	// TODO : CODE THIS MORE PROPERLY
+	if (eventInfo.title === "Cérémonie de clôture") {
+		document.getElementById('event-panel-rules').style.display = 'none';
+		if (document.getElementById('register-referee-button')) {
+			document.getElementById('register-referee-button').style.display = 'none';
+		}
+	}
+
 	this.map.invalidateSize();
 
 	// TODO: find an alternative (with event listener for instance)
