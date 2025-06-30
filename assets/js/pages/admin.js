@@ -6,12 +6,21 @@ function showRegistrationsPanel(eventClickInfo) {
 
 	panel.getElementById('registrations-panel-title')
 		.innerHTML = eventInfo.title;
-	panel.getElementById('registrations-panel-referee')
-		.innerHTML = eventInfo.extendedProps.team_name;
 
 	new Table(
 		panel.getElementById('registrations-table-container'),
 		`index.php?action=admin&requestRegistered=${eventInfo.id}`,
+		['Nom', 'Prénom', 'Équipe'],
+		data => data.map(input => [
+			input.name,
+			input.first_name,
+			input.team,
+		]),
+	);
+
+	new Table(
+		panel.getElementById('registrations-table-container-referee'),
+		`index.php?action=admin&requestRegisteredReferee=${eventInfo.id}`,
 		['Nom', 'Prénom', 'Équipe'],
 		data => data.map(input => [
 			input.name,

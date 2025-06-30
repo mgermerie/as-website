@@ -65,6 +65,7 @@ class AuthentificationManager
 		$password,
 		$name,
 		$firstName,
+		$size,
 		$options=[],
 	)
 	{
@@ -87,6 +88,7 @@ class AuthentificationManager
 			$firstName,
 			$email,
 			$hashedPassword,
+			$size,
 		) )
 		{
 			execute_callback( @$options['on_success'] );

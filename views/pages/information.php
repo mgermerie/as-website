@@ -5,8 +5,8 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
-			Informations / Règlement
+		<h1 class="page-title special-font">
+			Informations / Reglement
 		</h1>
 		<p class="page-description">
 			Retrouvez sur cette page la liste des épreuves, le règlement des
@@ -95,7 +95,7 @@
 		</h2>
 		<div class="info-page-section-content-wrapper">
 			<p class="info-page-section-text">
-				La participation à l'édition 2024 des olympiades est ouverte à
+				La participation à l'édition 2025 des olympiades est ouverte à
 				tous les agents et agentes de l'IGN, qu'ils ou elles soient à
 				Saint-Mandé ou en Direction Territoriale.
 			</p>

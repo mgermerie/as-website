@@ -24,7 +24,25 @@ function isEventInRegisteredEvents(eventId, registeredEvents) {
 		return false;
 	}
 	for (const registeredEvent of registeredEvents) {
-		if (registeredEvent['event_id'] == eventId) {
+		if (
+			!registeredEvent['referee']
+			&& registeredEvent['event_id'] == eventId
+		) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function isEventInRegisteredRefereeEvents(eventId, registeredEvents) {
+	if (!registeredEvents) {
+		return false;
+	}
+	for (const registeredEvent of registeredEvents) {
+		if (
+			registeredEvent['referee']
+			&& registeredEvent['event_id'] == eventId
+		) {
 			return true;
 		}
 	}
@@ -37,7 +55,9 @@ function isSimilarEventInRegisteredEvents(eventTitle, registeredEvents) {
 		return false;
 	}
 	for (const registeredEvent of registeredEvents) {
-		if (registeredEvent['title'] == eventTitle) {
+		if (
+			!registeredEvent['referee']
+			&& registeredEvent['title'] == eventTitle) {
 			return true;
 		}
 	}
@@ -57,6 +77,8 @@ function onEventClick(eventClickInfo) {
 		.content.cloneNode(true);
 	const eventInfo = eventClickInfo.event;
 	const eventProperties = eventInfo.extendedProps;
+	console.log(eventInfo);
+	console.log(eventProperties);
 
 	// Event information list
 
@@ -72,6 +94,8 @@ function onEventClick(eventClickInfo) {
 		.innerHTML = parseDateToStringHour(eventInfo.end);
 	eventPanel.getElementById('event-panel-location')
 		.innerHTML = eventProperties.name;
+	eventPanel.getElementById('event-panel-referee-number')
+		.innerHTML = eventProperties['referee_number'];
 	eventPanel.getElementById('event-panel-rules')
 		.href = '/data/rules/' + eventInfo.title + '.pdf';
 
@@ -117,14 +141,15 @@ function onEventClick(eventClickInfo) {
 			// she cannot subscribe to this one
 			form.classList.add('cannot-register');
 		}
-		// If a team is already registered as referee to this event
-		if (eventProperties.team_id) {
-			if (eventProperties.team_id === this.userInfo.teamId) {
-				form.classList.add('registered-referee');
-			} else {
-				form.classList.add('cannot-register-referee');
-			}
+
+		// If user is already regeistered as referee to this event
+		if (isEventInRegisteredRefereeEvents(
+			eventInfo.id,
+			this.userInfo.registeredEvents,
+		)) {
+			form.classList.add('registered-referee');
 		}
+
 
 		form.addEventListener(
 			'submit',
@@ -152,6 +177,7 @@ function onEventClick(eventClickInfo) {
 						this.userInfo.registeredEvents.push({
 							event_id: eventInfo.id,
 							title: eventInfo.title,
+							referee: 0,
 						});
 					} else if (response === 'unregisterSuccess') {
 						form.classList.remove('registered-user');
@@ -164,6 +190,11 @@ function onEventClick(eventClickInfo) {
 					} else if (response === 'registerRefereeSuccess') {
 						form.classList.remove('form-register-referee');
 						form.classList.add('registered-referee');
+						this.userInfo.registeredEvents.push({
+							event_id: eventInfo.id,
+							title: eventInfo.title,
+							referee: 1,
+						});
 					}
 					this.fullCalendar.refetchEvents();
 				});
@@ -284,10 +315,15 @@ class RegistrationCalendar extends Calendar {
 				url: '/index.php?action=calendar',
 			});
 			registeredSource.eventDataTransform = (function(eventData) {
-				return isEventInRegisteredEvents(
-					eventData.id,
-					this.userInfo.registeredEvents,
-				) && eventData;
+				return (
+					isEventInRegisteredEvents(
+						eventData.id,
+						this.userInfo.registeredEvents,
+					)
+					|| isEventInRegisteredRefereeEvents(
+						eventData.id,
+						this.userInfo.registeredEvents,
+					)) && eventData;
 			}).bind(this);
 			registeredSource.display = 'block';
 			eventSources.push(registeredSource);

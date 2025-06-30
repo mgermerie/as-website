@@ -36,6 +36,15 @@ if ( $_SERVER['REQUEST_METHOD'] === 'GET' )
         );
         exit();
     }
+    else if ( isset( $_GET['requestRegisteredReferee'] ) )
+    {
+        echo json_encode(
+            $eventsManager->get_registered_referee_for_event(
+                $_GET['requestRegisteredReferee'],
+            ),
+        );
+        exit();
+    }
     else if ( isset( $_GET['requestTypedResults'] ) )
     {
         echo json_encode(

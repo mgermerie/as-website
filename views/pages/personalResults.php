@@ -5,8 +5,8 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
-			Mes résultats
+		<h1 class="page-title special-font">
+			Mes resultats
 		</h1>
 		<p class="page-description">
 			Retrouvez sur cette page vos résultats personnels, ainsi que ceux de
@@ -14,11 +14,10 @@
 		</p>
 	</div>
 
-	<section class="page-section only-page-section">
-		<h2 class="page-section-title no-data-available
-				results-page-section-title">
-			Le développement de cette page n'est pas encore fini. Merci de
-			patienter encore un peu...
+	<section class="page-section">
+		<div class="results-page-section-image"></div>
+		<h2 class="page-section-title no-data-available">
+			Il ne peut pas y avoir de résultats s'il n'y a pas encore eu d'épreuves...
 		</h2>
 	</section>
 </div>

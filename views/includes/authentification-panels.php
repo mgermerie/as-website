@@ -115,6 +115,23 @@
 				</label>
 
 				<label class="form-label">
+					Votre taille de T-shirt (c'est une surprise...)
+					<select class="form-input form-input-text"
+							name="userSize">
+						<option value="" selected>
+							Choisir une option
+						</option>
+						<option value="XS">XS</option>
+						<option value="S">S</option>
+						<option value="M">M</option>
+						<option value="L">L</option>
+						<option value="XL">XL</option>
+						<option value="XXL">XXL</option>
+						<option value="XXXL">XXXL</option>
+					</select>
+				</label>
+
+				<label class="form-label">
 					Votre adresse email*
 					<span class="form-label-hint">
 						Exemple : nom.prenom@exemple.fr

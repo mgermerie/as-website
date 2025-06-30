@@ -22,7 +22,6 @@ $team = $_SESSION['LOGGED_USER']['team'];
 $teamName = $team['name'];
 $teamMembers = $teamsManager->get_team_members( $team );
 $teamLeader = $teamsManager->get_team_leader_name( $team );
-$referedEvents = $teamsManager-> get_refered_events( $team );
 
 
 # VIEWS

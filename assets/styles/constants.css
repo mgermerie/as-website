@@ -1,25 +1,12 @@
 :root {
 
-	--turkey-red: #b20000;
 	--white: #ffffff;
-	--dim-gray: #666666;
-	--sandy-brown: #ee964b;
-	--raisin-black: #1b1b24;
-	--anti-flash-white: #eeeeee;
+	--timberwolf: #e0ddd5;
+	--delft-blue: #283d70;
+	--gunmetal: #2e3546;
+	--lion: #c6934b;
+	--turkey-red: #b20000;
 
-	--dark-orange: #ff8e2b;
-	--auburn: #b23333ff;
-	--persian-orange: #de9151ff;
-	--silver: #bbb8b2ff;
-	--powder-blue: #b4c5e4ff;
-
-
-	--auburn-filter:	invert(16%)
-						sepia(60%)
-						saturate(4895%)
-						hue-rotate(353deg)
-						brightness(77%)
-						contrast(122%);
 	--white-filter:	invert(100%)
 					sepia(0%)
 					saturate(1%)
@@ -27,26 +14,45 @@
 					brightness(108%)
 					contrast(101%);
 
+	--delft-blue-filter:	brightness(0)
+							saturate(100%)
+							invert(20%)
+							sepia(28%)
+							saturate(1450%)
+							hue-rotate(186deg)
+							brightness(98%)
+							contrast(92%);
 
-	--first-color: var(--turkey-red);
-	--hover-first-color: #ebebeb;
+	--turkey-red-filter:	brightness(0)
+							saturate(100%)
+							invert(10%)
+							sepia(84%)
+							saturate(5857%)
+							hue-rotate(359deg)
+							brightness(88%)
+							contrast(112%);
+
+
+	--first-color: var(--delft-blue);
+	--hover-first-color: var(--timberwolf);
 	--contrasted-first-color: var(--white);
-	--filter-first-color: var(--auburn-filter);
-	--contrasted-filter-first-color: var(--filter-second-color);
+	--filter-first-color: var(--delft-blue-filter);
+	--contrasted-filter-first-color: var(--white-filter);
 
 	--second-color: var(--white);
-	--hover-second-color: #c61414;
-	--contrasted-second-color: var(--turkey-red);
+	--hover-second-color: #3c5184;
+	--contrasted-second-color: var(--delft-blue);
 	--filter-second-color: var(--white-filter);
 	--contrasted-filter-second-color: var(--filter-first-color);
 
-
-	--third-color: var(--dim-gray);
-	--fourth-color: var(--sandy-brown);
-	--fifth-color: var(--raisin-black);
+	--third-color: var(--gunmetal);
+	--fourth-color: var(--timberwolf);
+	--fifth-color: var(--lion);
 
 	--alert-color: var(--turkey-red);
-	--hover-color: rgba(23, 23, 23, 0.64);
+	--filter-alert-color: var(--turkey-red-filter);
+
+	--panel-hover-color: rgba(23, 23, 23, 0.64);
 	--default-background-color: var(--white);
 
 

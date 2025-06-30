@@ -58,6 +58,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
                 $_POST['userPassword'],
                 $_POST['userName'],
                 $_POST['userFirstName'],
+				$_POST['userSize'],
                 [ 'on_failure' => $defaultCallback ],
             )
         )

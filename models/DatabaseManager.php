@@ -15,7 +15,7 @@ class DatabaseManager
 		try
 		{
 			$databaseAccess = parse_ini_file(
-				'../access.ini',
+				'../access25.ini',
 				true,
 				INI_SCANNER_RAW,
 			)['database'];
@@ -102,17 +102,19 @@ class DatabaseManager
 		$firstName,
 		$email,
 		$hashedPassword,
+		$size,
 	)
 	{
 		return $this->execute_statement(
 			"INSERT INTO
-				users (name, first_name, email, password)
-				VALUES (:name, :firstName, :email, :hashedPassword)",
+				users (name, first_name, email, password, size)
+				VALUES (:name, :firstName, :email, :hashedPassword, :size)",
 			[
 				':name' => $name,
 				':firstName' => $firstName,
 				':email' => $email,
 				':hashedPassword' => $hashedPassword,
+				':size' => $size,
 			],
 		);
 	}
@@ -266,15 +268,14 @@ class DatabaseManager
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
 					events.team_event,
-					team_referee_registration.team_id,
-					teams.name as team_name
+					(SELECT COUNT(*)
+						FROM events_registration
+						WHERE events_registration.event_id=events.id
+							AND events_registration.referee=TRUE
+						) AS referee_number
 				FROM events
 				LEFT JOIN locations
 					ON events.location_id=locations.id
-				LEFT JOIN team_referee_registration
-					ON events.id=team_referee_registration.event_id
-				LEFT JOIN teams
-					ON team_referee_registration.team_id=teams.id
 				WHERE start IS NOT NULL
 					AND end IS NOT NULL
 					AND start > :dateStart
@@ -303,15 +304,14 @@ class DatabaseManager
 					ST_X(locations.location) as latitude,
 					ST_Y(locations.location) as longitude,
 					events.team_event,
-					team_referee_registration.team_id,
-					teams.name as team_name
+					(SELECT COUNT(*)
+						FROM events_registration
+						WHERE events_registration.event_id=events.id
+							AND events_registration.referee=TRUE
+						) AS referee_number
 				FROM events
 				LEFT JOIN locations
 					ON events.location_id=locations.id
-				LEFT JOIN team_referee_registration
-					ON events.id=team_referee_registration.event_id
-				LEFT JOIN teams
-					ON team_referee_registration.team_id=teams.id
 				WHERE events.start IS NOT NULL
 					AND events.end IS NOT NULL
 					AND events.start > :dateStart
@@ -420,7 +420,8 @@ class DatabaseManager
 	{
 		return $this->execute_statement(
 			"SELECT events_registration.event_id,
-					events.title
+					events.title,
+					events_registration.referee
 				FROM events_registration
 				LEFT JOIN events ON events_registration.event_id=events.id
 				WHERE events_registration.user_id=:userId",
@@ -440,26 +441,45 @@ class DatabaseManager
 				FROM events_registration
 				LEFT JOIN users ON events_registration.user_id=users.id
 				LEFT JOIN teams ON users.team=teams.id
-				WHERE events_registration.event_id=:eventId",
+				WHERE events_registration.event_id=:eventId
+					AND events_registration.referee=FALSE",
 			[ ':eventId' => $eventId ],
 		)->fetchAll();
 	}
 
 
-	function register_referee_team_to_event (
-		$teamId,
+	function register_referee_to_event (
+		$userId,
 		$eventId,
 	)
 	{
 		return $this->execute_statement(
 			"INSERT INTO
-				team_referee_registration (event_id, team_id)
-				VALUES (:eventId, :teamId)",
+				events_registration (event_id, user_id, referee)
+				VALUES (:eventId, :user_id, TRUE)",
 			[
 				':eventId' => $eventId,
-				':teamId' => $teamId,
+				':user_id' => $userId,
 			],
 		);
+	}
+
+
+	function get_registered_referee_for_event (
+		$eventId,
+	)
+	{
+		return $this->execute_statement(
+			"SELECT users.first_name,
+					users.name,
+					teams.name as team
+				FROM events_registration
+				LEFT JOIN users ON events_registration.user_id=users.id
+				LEFT JOIN teams ON users.team=teams.id
+				WHERE events_registration.event_id=:eventId
+					AND events_registration.referee=TRUE",
+			[ ':eventId' => $eventId ],
+		)->fetchAll();
 	}
 
 
@@ -496,6 +516,25 @@ class DatabaseManager
 					ON events.id=team_referee_registration.event_id
 				WHERE team_referee_registration.team_id=:team_id",
 			[ ':team_id' => $teamId ],
+		)->fetchAll();
+	}
+	function get_events_with_referee (
+		$refereeId,
+	)
+	{
+		$this->execute_statement(
+			"SET lc_time_names = 'fr_FR'",
+		);
+		return $this->execute_statement(
+			"SELECT events.title,
+					DAY(events.start) as day,
+					DAYNAME(events.start) as day_name,
+					MONTHNAME(events.start) as month_name
+				FROM events
+				LEFT JOIN referee_registration
+					ON events.id=referee_registration.event_id
+				WHERE referee_registration.user_id=:referee_id",
+			[ ':referee_id' => $refereeId ],
 		)->fetchAll();
 	}
 

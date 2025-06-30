@@ -15,11 +15,11 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
+		<h1 class="page-title special-font">
 			Calendrier
 		</h1>
 		<p class="page-description">
-			Retrouvez sur cette page le calendrier de l'édition 2024 des
+			Retrouvez sur cette page le calendrier de l'édition 2025 des
 			olympiades. Cliquez sur un évènement pour vous y inscrire.
 		</p>
 <?php	if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] )
@@ -120,6 +120,17 @@
 					</div>
 				</div>
 
+				<div class="event-panel-details-wrapper">
+					<p	class="event-panel-text">
+						Nombre d'encadrants inscrits
+					</p>
+					<div class="event-panel-details-value">
+						<p	class="event-panel-text"
+							id="event-panel-referee-number">
+						</p>
+					</div>
+				</div>
+
 				<a	class="link first-color large-link"
 					id="event-panel-rules"
 					href=""
@@ -172,18 +183,14 @@
 								value="Se désinscrire">
 					</fieldset>
 
-<?php		if ( isset( $_SESSION['LOGGED_USER']['teamLeader'] ) ) { ?>
-<?php			if ( $_SESSION['LOGGED_USER']['teamLeader'] ) { ?>
-
 					<fieldset	class="form-fieldset register-referee
 									event-panel-registration-fieldset">
 						<span class="form-label-hint">
-							En inscrivant votre équipe à l'encadrement de cette
-							épreuve, vous l'engagez à ce que suffisamment de ses
-							membres soient présents le jour de l'épreuve pour en
-							assurer le bon fonctionnement (explication et
-							contrôle du respect des règles, prise en note des
-							résultats...).
+							En vous inscrivant à l'encadrement de l'épreuve,
+							vous vous engagez à être présent·e le jour de
+							l'épreuve pour en assurer le bon fonctionnement
+							(explication et contrôle du respect des règles,
+							prise en note des résultats...).
 						</span>
 						<span class="form-label-hint">
 							En cas d'empêchement, merci de prévenir l'équipe
@@ -191,8 +198,7 @@
 							de l'épreuve.
 						</span>
 						<span class="form-label-hint">
-							Êtes-vous certain·e de vouloir inscrire votre équipe
-							à l'encadrement de cette épreuve ?
+							En contre-partie, vous serez une personne géniale !
 						</span>
 						<input	class="button first-color full-button
 									form-input form-input-submit
@@ -206,9 +212,6 @@
 						</button>
 					</fieldset>
 
-<?php			} ?>
-<?php		} else { ?>
-<?php		} ?>
 
 <?php		if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] )
 				&& $_SESSION['LOGGED_USER']['isAdmin'] ) { ?>
@@ -233,27 +236,17 @@
 
 				</form>
 
-<?php		if ( isset( $_SESSION['LOGGED_USER']['teamLeader'] ) ) { ?>
-<?php			if ( $_SESSION['LOGGED_USER']['teamLeader'] ) { ?>
-
-				<span class="form-label-hint cannot-register-referee-label">
-					Une autre équipe est déjà inscrite à l'encadrement de cette
-					épreuve.
-				</span>
 				<button	class="button first-color
 							button-register-referee"
 						id="register-referee-button">
-					Inscrire mon équipe à l'encadrement
+					Je souhaite aider à l'encadrement de l'épreuve
 				</button>
-
-<?php			} ?>
 
 				<span	class="form-label-hint important
 							registered-referee-label">
-					Votre équipe est inscrite à l'encadrement de cette épreuve.
+					Vous êtes inscrit à l'encadrement de l'épreuve.
 				</span>
 
-<?php		} ?>
 
 <?php		if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] )
 				&& $_SESSION['LOGGED_USER']['isAdmin'] ) { ?>

@@ -19,7 +19,7 @@
 
 		<div class="team-cards-wrapper">
 			<div class="team-card">
-				<h3 class="team-card-title">
+				<h3 class="team-card-title special-font">
 <?php				echo $teamName; ?>
 				</h3>
 
@@ -49,59 +49,6 @@
 	<section class="page-section">
 
 		<h2 class="page-section-title">
-			Encadrement des épreuves
-		</h2>
-
-		<div class="info-page-section-content-wrapper">
-			<p class="info-page-section-text">
-				Votre équipe peut s'engager à encadrer une ou plusieurs
-				épreuves qui ont lieu à Saint-Mandé. L'équipe se verra alors
-				accorder un bonus.
-			</p>
-			<p class="info-page-section-text">
-				Pour ce faire, votre responsable d'équipe peut inscrire
-				votre équipe à l'encadrement d'une ou plusieurs épreuves sur
-				la page du calendrier. L'inscription de votre équipe à
-				l'encadrement d'une épreuve vous engage à ce que
-				suffisamment de vos coéquipiers et coéquipières soient
-				présents le jour de l'épreuve. Vous devrez alors assurer le
-				bon déroulement de l'épreuve, ainsi que le recueil des
-				résultats.
-			</p>
-		</div>
-
-		<div class="info-page-section-content-wrapper">
-<?php 		if ( $referedEvents ) { ?>
-				<p class="info-page-section-text">
-					Votre équipe est inscrite à l'encadrement des épreuves
-					suivantes :
-				</p>
-				<ul class="page-section-list">
-<?php				foreach ( $referedEvents as $event ) { ?>
-						<li>
-<?php						echo $event['title'] ?>
-							le
-							<strong>
-<?php							echo $event['day_name'].' '
-									.$event['day'].' '
-									.$event['month_name'] ?>
-							</strong>
-						</li>
-<?php				} ?>
-				</ul>
-<?php		} else { ?>
-				<p class="info-page-section-text">
-					Votre équipe n'est pas inscrite à l'encadrement d'une
-					épreuve.
-				</p>
-<?php		} ?>
-		</div>
-
-	</section>
-
-	<section class="page-section">
-
-		<h2 class="page-section-title">
 			Responsable d'équipe
 		</h2>
 
@@ -117,10 +64,7 @@
 			</p>
 			<p class="info-page-section-text">
 				Le ou la responsable d'équipe est la personne qui a créé
-				l'équipe sur ce site web. Ce rôle l'engage à inscrire son
-				équipe à l'encadrement d'une ou plusieurs épreuves sur la
-				page du calendrier, chose qu'il ou elle est le seul ou la
-				seule à pouvoir faire.
+				l'équipe sur ce site web.
 			</p>
 		</div>
 

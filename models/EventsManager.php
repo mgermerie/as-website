@@ -92,6 +92,7 @@ class EventsManager
 				[
 					'event_id' => $eventId,
 					'title' => $eventName,
+					'referee' => False,
 				],
 			);
 			execute_callback( @$options['on_success'] );
@@ -127,17 +128,29 @@ class EventsManager
 	}
 
 
-	function register_referee_team_to_event (
-		$teamId,
+	function register_referee_to_event (
+		$userId,
 		$eventId,
 		$options=[],
 	)
 	{
-		if ( $this->database->register_referee_team_to_event(
-			$teamId,
+		$eventName = $this->get_event_name_from_id( $eventId );
+
+		$query = $this->database->register_referee_to_event(
+			$userId,
 			$eventId,
-		) )
+		);
+
+		if ( $query && $eventName )
 		{
+			array_push(
+				$_SESSION['LOGGED_USER']['registeredEvents'],
+				[
+					'event_id' => $eventId,
+					'title' => $eventName,
+					'referee' => True,
+				],
+			);
 			execute_callback( @$options['on_success'] );
 			return true;
 		}
@@ -171,6 +184,13 @@ class EventsManager
 	)
 	{
 		return $this->database->get_registered_users_for_event( $eventId );
+	}
+
+	function get_registered_referee_for_event (
+		$eventId,
+	)
+	{
+		return $this->database->get_registered_referee_for_event( $eventId );
 	}
 
 

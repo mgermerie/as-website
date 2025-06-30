@@ -45,16 +45,10 @@
 		</section>
 
 		<section class="event-panel-details-section">
-			<div class="event-panel-details-wrapper">
-				<h4	class="event-panel-section-title">
-					Équipe inscrite à l'encadrement
-				</h4>
-				<div class="event-panel-details-value">
-					<span	class="contestants-page-member"
-							id="registrations-panel-referee">
-					</span>
-				</div>
-			</div>
+			<h4	class="event-panel-section-title">
+				Personnes inscrites à l'encadrement
+			</h4>
+			<div id="registrations-table-container-referee"></div>
 		</section>
 
 	</div>

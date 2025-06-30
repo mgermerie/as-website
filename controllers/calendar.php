@@ -109,8 +109,8 @@ else if (
     }
     else if ( isset( $_POST['registerReferee'] ) )
     {
-        $eventsManager->register_referee_team_to_event(
-            $_SESSION['LOGGED_USER']['teamId'],
+        $eventsManager->register_referee_to_event(
+            $_SESSION['LOGGED_USER']['id'],
             $_POST['eventId'],
             [
                 'on_success' => function () {
