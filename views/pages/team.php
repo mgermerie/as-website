@@ -19,7 +19,7 @@
 
 		<div class="team-cards-wrapper">
 			<div class="team-card">
-				<h3 class="team-card-title">
+				<h3 class="team-card-title special-font">
 <?php				echo $teamName; ?>
 				</h3>
 

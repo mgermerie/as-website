@@ -8,8 +8,8 @@
 		<div class="home-page-background-image"></div>
 		<div class="home-page-blur-filter"></div>
 
-		<h1 class="home-page-title">
-			Toutes en couleurs
+		<h1 class="home-page-title special-font">
+			Mythologie grecque
 		</h1>
 
 			<div class="home-page-call-to-action">

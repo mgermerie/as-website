@@ -13,7 +13,7 @@
 	height: 100vh;
 	width: 100vw;
 
-	background-color: var(--hover-color);
+	background-color: var(--panel-hover-color);
 
 	align-items: center;
 	display: flex;
@@ -30,11 +30,10 @@
 }
 
 .panel {
-	border-radius: 8px;
-	max-height: 65%;
+	max-height: 75%;
 	overflow: auto;
 	padding: 80px;
-	width: 480px;
+	width: 520px;
 
 	background-color: var(--default-background-color);
 
@@ -42,6 +41,13 @@
 	flex-direction: column;
 	gap: 32px;
 	position: relative;
+
+    border-width: 20px;
+    border-style: solid;
+    border-image-source: url('/assets/images/greek-border.svg');
+    border-image-repeat: round;
+    border-image-slice: 96;
+    border-image-width: 20px;
 }
 
 .panel.large-panel {
@@ -113,5 +119,9 @@
 
 .error-panel-message {
 	margin: 0;
+}
+
+.error-panel-close-button::after {
+	filter: var(--filter-alert-color) !important;
 }
 

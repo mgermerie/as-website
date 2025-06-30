@@ -39,8 +39,6 @@
 	display: block;
 	max-height: 80%;
 	max-width: 100%;
-
-	filter: drop-shadow(16px 16px 20px white);
 }
 
 
@@ -168,7 +166,7 @@
 /* -------------------------------------------------------------------------- */
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
 	.header-account-toggle {
 		display: none;
 	}

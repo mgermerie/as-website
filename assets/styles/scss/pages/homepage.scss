@@ -6,6 +6,7 @@
 .home-page-banner {
 	align-items: center;
 	display: flex;
+    flex-direction: column;
 	flex-grow: 1;
 	gap: 104px;
 	justify-content: center;
@@ -47,7 +48,7 @@
 
 	color: var(--second-color);
 	font-size: 80px;
-	text-align: right;
+	text-align: center;
 	text-shadow: 0 0 24px var(--first-color);
 }
 
@@ -56,22 +57,5 @@
 	flex-direction: column;
 	gap: 40px;
 	z-index: 10;
-}
-
-
-
-
-/* -------------------------------------------------------------------------- */
-/* ---------- RESPONSIVITY -------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-
-@media (max-width: 1000px) {
-	.home-page-banner {
-		flex-direction: column;
-	}
-
-	.home-page-title {
-		text-align: center;
-	}
 }
 

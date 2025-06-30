@@ -5,12 +5,12 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
+		<h1 class="page-title special-font">
 			Participants
 		</h1>
 		<p class="page-description">
 			Retrouvez sur cette page la liste des participants et participantes
-			à l'édition 2024 des olympiades, qu'ils ou elles soient en équipe ou
+			à l'édition 2025 des olympiades, qu'ils ou elles soient en équipe ou
 			en solitaire.
 		</p>
 	</div>
@@ -34,7 +34,7 @@
 
 				<div class="team-card">
 
-					<h3 class="team-card-title">
+					<h3 class="team-card-title special-font">
 <?php 					echo $team['name']; ?>
 					</h3>
 

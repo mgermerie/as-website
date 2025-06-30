@@ -3,18 +3,11 @@
 /* -------------------------------------------------------------------------- */
 
 
-.results-page-section-title {
-	gap: 16px;
-}
-.results-page-section-title::before {
-	height: 30px;
-	width: 30px;
-
-	content: "";
-	background-image: url('/assets/icons/hourglass-split.svg');
-	background-size: 30px 30px;
-
-	display: flex;
-
+.results-page-section-image {
+    height: 300px;
+    background-image: url('/assets/images/zeus-think.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 

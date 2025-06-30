@@ -15,11 +15,11 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
+		<h1 class="page-title special-font">
 			Calendrier
 		</h1>
 		<p class="page-description">
-			Retrouvez sur cette page le calendrier de l'édition 2024 des
+			Retrouvez sur cette page le calendrier de l'édition 2025 des
 			olympiades. Cliquez sur un évènement pour vous y inscrire.
 		</p>
 <?php	if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] )
