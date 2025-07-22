@@ -8,9 +8,14 @@
 		<div class="home-page-background-image"></div>
 		<div class="home-page-blur-filter"></div>
 
-		<h1 class="home-page-title special-font">
-			Mythologie grecque
-		</h1>
+		<div class="home-page-title-wrapper">
+			<h2 class="home-page-subtitle">
+				Olympiades IGN 2025
+			</h2>
+			<h1 class="home-page-title special-font">
+				Mythologie grecque
+			</h1>
+		</div>
 
 			<div class="home-page-call-to-action">
 

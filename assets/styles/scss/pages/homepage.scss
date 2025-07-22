@@ -7,7 +7,7 @@
 	align-items: center;
 	display: flex;
     flex-direction: column;
-	flex-grow: 1;
+    flex-grow: 1;
 	gap: 104px;
 	justify-content: center;
 	position: relative;
@@ -21,7 +21,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -41,15 +41,32 @@
 	z-index: 6;
 }
 
+.home-page-title-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+
+    z-index: 10;
+}
+
 .home-page-title {
 	margin: 0;
-
-	z-index: 10;
 
 	color: var(--second-color);
 	font-size: 80px;
 	text-align: center;
 	text-shadow: 0 0 24px var(--first-color);
+}
+
+.home-page-subtitle {
+    margin: 0;
+
+    align-items: center;
+
+    color: var(--second-color);
+    font-size: 32px;
 }
 
 .home-page-call-to-action {
