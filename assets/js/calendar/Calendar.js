@@ -20,13 +20,13 @@ const FULL_CALENDAR_BASE_OPTIONS = {
 const DEFAULT_STYLE = {
 	color: {
 		"Fléchettes": 'red',
-		"Haltères": 'black',
 		"Ballons": 'yellow',
-		"Lancer de poids": 'gray',
-		"Relais": 'brown',
-		"Saut en longueur": 'blue',
-		"Pétanque": 'orange',
+		"Biathlon": 'black',
+		"Cérémonie de clôture": 'blue',
+		"Course d'orientation": 'brown',
 		"Ekiden": 'green',
+		"Lancer de poids": 'gray',
+		"Pétanque": 'orange',
 
 		'registeredEvents': 'green',
 	},
