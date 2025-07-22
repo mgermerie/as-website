@@ -64,6 +64,16 @@
 		<h2 class="page-section-title">
 			Règlement des épreuves
 		</h2>
+		<div class="info-page-section-content-wrapper">
+			<p class="info-page-section-text">
+				Le règlement et le barème de l'édition 2025 des olympiades sont en cours de
+				peaufinage. Vous pouvez retrouver une version temporaire du règlement pour 2025
+				ainsi que le barème de l'édition 2024 aux liens ci-dessous, à titre indicatif.
+			</p>
+			<p class="info-page-section-text">
+				Les versions finalisées de ces deux documents seront publiées ici prochainement. 
+			</p>
+		</div>
 		<div class="info-page-section-content-wrapper rules-links-wrapper">
 			<a	class="button button-link first-color full-button large-button
 					info-page-rules-link"
