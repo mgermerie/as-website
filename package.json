@@ -1,4 +1,5 @@
 {
+  "name": "olympiades-ign",
   "scripts": {
     "build-css": "sass ./assets/styles/scss/style.scss:./assets/styles/style.css"
   },
