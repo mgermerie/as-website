@@ -79,6 +79,9 @@ else if ( $_GET['action'] === 'admin' )
 else if ( $_GET['action'] === 'passwordReset' ) {
 	require_once( './controllers/passwordReset.php' );
 }
+else if ( $_GET['action'] === 'passwordHash' ) {
+	require_once( './controllers/passwordHash.php' );
+}
 else if ( $_GET['action'] === '505' )
 {
 	require_once( './controllers/505.php' );
