@@ -63,7 +63,7 @@
 
 		<section class="page-section">
 
-			<div class="results-page-section-image"></div>
+			<div class="personal-results-page-section-image"></div>
 
 			<h2 class="page-section-title no-data-available">
 				Il ne peut pas y avoir de résultats si vous ou votre équipe

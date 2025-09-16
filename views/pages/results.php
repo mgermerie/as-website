@@ -26,7 +26,8 @@
 			<div class="results-page-section-image"></div>
 
 			<h2 class="page-section-title no-data-available">
-				Il ne peut pas y avoir de résultats s'il n'y a pas encore eu d'épreuves...
+				L'équipe d'organisation fait tout son possible pour publier les
+				résultats le plus vite possible.
 			</h2>
 
 		</section>
