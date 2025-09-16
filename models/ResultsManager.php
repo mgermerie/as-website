@@ -18,6 +18,12 @@ class ResultsManager
 	}
 
 
+	function get_events ()
+	{
+		return $this->database->get_events_with_results();
+	}
+
+
 	function get_results ()
 	{
 		return $this->database->get_results();

@@ -540,6 +540,16 @@ class DatabaseManager
 
 
 
+	function get_events_with_results ()
+	{
+		return $this->execute_statement(
+			"SELECT DISTINCT events.title,
+					events.team_event
+				FROM results
+				LEFT JOIN events ON results.event_id=events.id",
+		)->fetchAll();
+	}
+
 
 	function get_results ()
 	{
