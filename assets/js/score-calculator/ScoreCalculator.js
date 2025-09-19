@@ -27,8 +27,8 @@ const DEFAULT_SCHEMA = {
 		prop: 'Fléchettes',
 		type: Number,
 	},
-	'RELAIS': {
-		prop: 'Relais',
+	'BIATHLON': {
+		prop: 'Biathlon',
 		type: String,
 	},
 	'EKIDEN': {
@@ -39,7 +39,7 @@ const DEFAULT_SCHEMA = {
 
 
 const DIMINISHING_PROPERTIES = [
-	'Relais',
+	'Biathlon',
 	'Ekiden',
 ];
 

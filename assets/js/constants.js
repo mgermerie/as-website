@@ -4,10 +4,9 @@ const PERFORMANCES_FORMAT = {
 		placeholder: 'Distance en mètres',
 		unit: ' mètres',
 	},
-	'Saut en longueur': {
-		test: value => !isNaN(Number(value)),
-		placeholder: 'Distance en mètres',
-		unit: ' mètres',
+	'Pompes': {
+		noPerformance: true,
+		unit: '',
 	},
 	'Ballons': {
 		test: value => !isNaN(Number(value)),
@@ -19,17 +18,12 @@ const PERFORMANCES_FORMAT = {
 		placeholder: 'Nombre de points',
 		unit: ' points',
 	},
-	'Haltères': {
-		test: value => !isNaN(Number(value)),
-		placeholder: 'Ratio des poids',
-		unit: ' points',
-	},
 	'Fléchettes': {
 		test: value => !isNaN(Number(value)),
 		placeholder: 'Nombre de points',
 		unit: ' points',
 	},
-	'Relais': {
+	'Biathlon': {
 		test: value => /^(2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9]$/.test(value),
 		placeholder: 'Durée (hh:mm:ss)',
 		unit: '',
