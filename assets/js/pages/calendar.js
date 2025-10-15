@@ -77,8 +77,6 @@ function onEventClick(eventClickInfo) {
 		.content.cloneNode(true);
 	const eventInfo = eventClickInfo.event;
 	const eventProperties = eventInfo.extendedProps;
-	console.log(eventInfo);
-	console.log(eventProperties);
 
 	// Event information list
 
