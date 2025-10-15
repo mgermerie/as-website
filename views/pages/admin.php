@@ -11,6 +11,7 @@
 <div class="page-content-wrapper">
 
 	<div class="page-banner has-tabs-bar">
+
 		<h1 class="page-title">
 			Espace administrateur
 		</h1>
@@ -18,24 +19,41 @@
 		<ul class="page-tabs-bar">
 
 			<li class="page-tab-name">
-				<button	class="page-tab-button active"
+
+				<button	class="page-tab-button"
 						id="tab-add-results-button">
 					Ajouter des résultats
 				</button>
+
 			</li>
 
 			<li class="page-tab-name">
+
 				<button	class="page-tab-button"
 						id="tab-event-registration-button">
 					Voir les inscriptions
 				</button>
+
+			</li>
+
+			<li class="page-tab-name">
+
+				<button	class="page-tab-button active"
+						id="tab-export-data-button">
+					Exporter des données
+				</button>
+
 			</li>
 
 		</ul>
+
 	</div>
 
-<?php require_once( './views/includes/admin-space/insert-result.php' ); ?>
-<?php require_once( './views/includes/admin-space/show-registrations.php' ); ?>
+	<?php
+		require_once( './views/includes/admin-space/insert-result.php' );
+		require_once( './views/includes/admin-space/show-registrations.php' );
+		require_once( './views/includes/admin-space/export-data.php' );
+	?>
 
 </div>
 
@@ -53,6 +71,8 @@
 
 <script src="/assets/js/pages/admin.js"></script>
 
+
 <?php $pageContent = ob_get_clean(); ?>
+
 
 <?php require_once( './views/templates/default.php' ); ?>

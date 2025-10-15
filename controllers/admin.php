@@ -54,6 +54,16 @@ if ( $_SERVER['REQUEST_METHOD'] === 'GET' )
         );
         exit();
     }
+	else if ( isset( $_GET['export-results'] ) )
+	{
+		echo json_encode($database->get_results());
+		exit();
+	}
+	else if ( isset( $_GET['export-mails'] ) )
+	{
+		echo json_encode($database->get_mails());
+		exit();
+	}
 }
 else if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
 {

@@ -188,10 +188,81 @@ new TabsManager(
 			document.getElementById('tab-event-registration'),
 			document.getElementById('tab-event-registration-button'),
 		),
+		new Tab(
+			document.getElementById('tab-export-data'),
+			document.getElementById('tab-export-data-button'),
+		),
 	],
 	() => {
 		calendars.map((calendar) => { calendar.fullCalendar.updateSize() });
 	},
 );
 
+
+function downloadCsv(filename, data) {
+	const blob = new Blob(
+		[data],
+		{ type: 'text/csv;charset=utf-8' },
+	);
+	const url = URL.createObjectURL(blob);
+	const link = document.createElement('a');
+	link.setAttribute('href', url);
+	link.setAttribute('download', filename);
+	link.style.display = 'none';
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+}
+
+function copyToClipboard(text) {
+	const textarea = document.createElement("textarea");
+	textarea.value = text;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+}
+
+
+document.getElementById('export-results-button').onclick = () => {
+	fetch(
+		'index.php?action=admin&export-results',
+	).then(response => response.json()).then((response) => {
+		const individualResultsRows = [
+			"prénom;nom;équipe;épreuve;performance;score"
+		];
+		const teamResultsRows = [
+			"équipe;épreuve;performance;score"
+		];
+
+		for (const row of response) {
+			if (row.team_event) {
+				teamResultsRows.push(
+					`${row.team};${row.title};${row.performance};${row.score}`,
+				);
+			} else {
+				individualResultsRows.push(
+					`${row.first_name};${row.name};${row.user_team};${row.title};${row.performance};${row.score}`,
+				);
+			}
+		}
+
+		downloadCsv('resultats-equipes.csv', teamResultsRows.join('\n'));
+		downloadCsv('resultats-individuels.csv', individualResultsRows.join('\n'));
+	});
+};
+
+document.getElementById('export-mails-button').onclick = () => {
+	fetch(
+		'index.php?action=admin&export-mails',
+	).then(response => response.json()).then((response) => {
+		const mailingList = [];
+
+		for (const row of response) {
+			mailingList.push(row.email);
+		}
+
+		copyToClipboard(mailingList.join(';'));
+	});
+};
 

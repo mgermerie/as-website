@@ -155,6 +155,15 @@ class DatabaseManager
 	}
 
 
+	function get_mails ()
+	{
+		return $this->execute_statement(
+			"SELECT email
+				FROM users",
+		)->fetchAll();
+	}
+
+
 
 
 	function get_teams ()
