@@ -67,10 +67,7 @@
 		<div class="info-page-section-content-wrapper">
 			<p class="info-page-section-text">
 				Vous pouvez retrouver aux liens ci-dessous le règlement de
-				l'édition 2025 des olympiades, ainsi que le barème de l'édition
-				2024 à titre indicatif. Le barème de l'édition 2025 doit être
-				peaufiné en fonction des résultats sur les nouvelles épreuves
-				expérimentées.
+				l'édition 2025 des olympiades, ainsi que le barème.
 			</p>
 		</div>
 		<div class="info-page-section-content-wrapper rules-links-wrapper">
