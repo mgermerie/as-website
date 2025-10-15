@@ -20,7 +20,7 @@
 
 			<li class="page-tab-name">
 
-				<button	class="page-tab-button"
+				<button	class="page-tab-button active"
 						id="tab-add-results-button">
 					Ajouter des résultats
 				</button>
@@ -38,7 +38,7 @@
 
 			<li class="page-tab-name">
 
-				<button	class="page-tab-button active"
+				<button	class="page-tab-button"
 						id="tab-export-data-button">
 					Exporter des données
 				</button>
