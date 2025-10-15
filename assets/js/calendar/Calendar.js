@@ -1,6 +1,6 @@
 const FULL_CALENDAR_BASE_OPTIONS = {
 	initialView: 'dayGridMonth',
-	initialDate: '2025-09-16',
+	initialDate: '2025-10-16',
 	locale: 'fr',
 	weekends: false,
 	fixedWeekCount: false,
