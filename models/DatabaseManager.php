@@ -15,7 +15,7 @@ class DatabaseManager
 		try
 		{
 			$databaseAccess = parse_ini_file(
-				'../access25.ini',
+				'../access26.ini',
 				true,
 				INI_SCANNER_RAW,
 			)['database'];
