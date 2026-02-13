@@ -26,8 +26,7 @@
 			<div class="results-page-section-image"></div>
 
 			<h2 class="page-section-title no-data-available">
-				L'équipe d'organisation fait tout son possible pour publier les
-				résultats le plus vite possible.
+				Les résultats arriveront quand il y en aura...
 			</h2>
 
 		</section>

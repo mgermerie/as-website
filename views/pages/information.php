@@ -67,7 +67,7 @@
 		<div class="info-page-section-content-wrapper">
 			<p class="info-page-section-text">
 				Vous pouvez retrouver aux liens ci-dessous le règlement de
-				l'édition 2025 des olympiades, ainsi que le barème.
+				l'édition 2026 des olympiades, ainsi que le barème.
 			</p>
 		</div>
 		<div class="info-page-section-content-wrapper rules-links-wrapper">
@@ -101,7 +101,7 @@
 		</h2>
 		<div class="info-page-section-content-wrapper">
 			<p class="info-page-section-text">
-				La participation à l'édition 2025 des olympiades est ouverte à
+				La participation à l'édition 2026 des olympiades est ouverte à
 				tous les agents et agentes de l'IGN, qu'ils ou elles soient à
 				Saint-Mandé ou en Direction Territoriale.
 			</p>

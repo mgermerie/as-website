@@ -7,7 +7,7 @@
 			id="login-panel">
 
 
-		<button	class="button first-color no-border
+		<button	class="button first-color no-border full-button
 					panel-close-button login-panel-button-close"
 				style="
 					--after-image: url('/assets/icons/x-circle.svg');
@@ -81,7 +81,7 @@
 			id="register-panel">
 
 
-		<button	class="button first-color no-border
+		<button	class="button first-color no-border full-button
 					panel-close-button register-panel-button-close"
 				style="
 					--after-image: url('/assets/icons/x-circle.svg');
@@ -211,7 +211,7 @@
 			id="register-team-panel">
 
 
-		<button	class="button first-color no-border
+		<button	class="button first-color no-border full-button
 					panel-close-button register-team-panel-button-close"
 				style="
 					--after-image: url('/assets/icons/x-circle.svg');

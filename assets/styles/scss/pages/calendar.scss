@@ -170,3 +170,20 @@ a.fc-event:hover {
 	display: none;
 }
 
+
+.fc-button {
+  border-color: var(--fifth-color) !important;
+  background-color: var(--fifth-color) !important;
+}
+.fc-button:active {
+  background-color: var(--fourth-color) !important;
+}
+.fc-button-active {
+  border-color: var(--fifth-color) !important;
+  background-color: var(--fourth-color) !important;
+  color: var(--fifth-color) !important;
+}
+.fc-button-active:focus,
+.fc-button-primary:focus{
+  box-shadow: unset !important;
+}

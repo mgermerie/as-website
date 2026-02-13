@@ -10,10 +10,13 @@
 
 		<div class="home-page-title-wrapper">
 			<h2 class="home-page-subtitle">
-				Olympiades IGN 2025
+				<img	class="home-page-subtitle-image"
+						src="/assets/images/pizza.png"
+						alt="Image d'une pizza représentant la lettre O">
+				lympiades IGN 2026
 			</h2>
 			<h1 class="home-page-title special-font">
-				Mythologie grecque
+				Année de l'Italie
 			</h1>
 		</div>
 

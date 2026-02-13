@@ -6,8 +6,8 @@
 .home-page-banner {
 	align-items: center;
 	display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
 	gap: 104px;
 	justify-content: center;
 	position: relative;
@@ -17,7 +17,7 @@
 	height: 100%;
 	width: 100%;
 
-	background-image: url('/assets/images/banner.jpg');
+	background-image: url('/assets/images/banner.jpeg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -42,13 +42,13 @@
 }
 
 .home-page-title-wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
 
-    z-index: 10;
+  z-index: 10;
 }
 
 .home-page-title {
@@ -61,12 +61,24 @@
 }
 
 .home-page-subtitle {
-    margin: 0;
+  margin: 0;
 
-    align-items: center;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
 
-    color: var(--second-color);
-    font-size: 32px;
+  color: var(--second-color);
+  font-size: 32px;
+}
+
+.home-page-subtitle-image {
+  height: 80px;
+  width: 80px;
+
+  filter: drop-shadow(0 0 5px #ffffffcc);
+
+  display: block;
 }
 
 .home-page-call-to-action {

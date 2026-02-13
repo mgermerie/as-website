@@ -24,7 +24,7 @@
 	<div	class="panel large-panel"
 			id="registrations-panel">
 
-		<button class="button first-color no-border
+		<button class="button first-color full-button no-border
 					panel-close-button registrations-panel-button-close"
 				style="
 					--after-image: url('/assets/icons/x-circle.svg');

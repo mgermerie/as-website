@@ -10,7 +10,7 @@
 		</h1>
 		<p class="page-description">
 			Retrouvez sur cette page la liste des participants et participantes
-			à l'édition 2025 des olympiades, qu'ils ou elles soient en équipe ou
+			à l'édition 2026 des olympiades, qu'ils ou elles soient en équipe ou
 			en solitaire.
 		</p>
 	</div>

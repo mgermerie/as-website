@@ -19,7 +19,7 @@
 			Calendrier
 		</h1>
 		<p class="page-description">
-			Retrouvez sur cette page le calendrier de l'édition 2025 des
+			Retrouvez sur cette page le calendrier de l'édition 2026 des
 			olympiades. Cliquez sur un évènement pour vous y inscrire.
 		</p>
 <?php	if ( isset( $_SESSION['LOGGED_USER']['isAdmin'] )
@@ -69,7 +69,7 @@
 		<div	class="panel"
 				id="event-panel">
 
-			<button class="button first-color no-border
+			<button class="button first-color no-border full-button
 						panel-close-button event-panel-button-close"
 					style="
 						--after-image: url('/assets/icons/x-circle.svg');

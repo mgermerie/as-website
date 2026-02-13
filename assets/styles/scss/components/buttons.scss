@@ -17,7 +17,7 @@
 	gap: 16px;
 	justify-content: center;
 
-    font-family: "Cinzel", sans-serif;
+  font-family: "Titillium web", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 }
@@ -91,6 +91,11 @@
 .button.second-color.full-button[style*='--before-image']::before,
 .button.second-color.full-button[style*='--after-image']::after {
 	filter: var(--contrasted-filter-second-color);
+}
+
+.button.no-filter::before,
+.button.no-filter::after {
+  filter: unset !important;
 }
 
 

@@ -12,7 +12,7 @@
 
 	<div class="page-banner has-tabs-bar">
 
-		<h1 class="page-title">
+		<h1 class="page-title special-font">
 			Espace administrateur
 		</h1>
 

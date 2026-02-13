@@ -1,7 +1,8 @@
 {
   "name": "olympiades-ign",
   "scripts": {
-    "build-css": "sass ./assets/styles/scss/style.scss:./assets/styles/style.css"
+    "build-css": "sass ./assets/styles/scss/style.scss:./assets/styles/style.css",
+    "watch-css": "sass --watch ./assets/styles/scss/style.scss ./assets/styles/style.css"
   },
   "dependencies": {
     "fullcalendar": "^6.1.13",

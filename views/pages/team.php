@@ -5,7 +5,7 @@
 
 
 	<div class="page-banner">
-		<h1 class="page-title">
+		<h1 class="page-title special-font">
 			Mon équipe
 		</h1>
 		<p class="page-description">

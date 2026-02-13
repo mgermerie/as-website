@@ -114,11 +114,11 @@
 
 			<!-- Colapsed connection button -->
 
-			<button class="button second-color
+			<button class="button second-color no-filter
 						login-panel-button-open"
 					id="collapsed-login-button"
 					style="
-						--before-image: url('/assets/icons/person-circle.svg');
+						--before-image: url('/assets/icons/italy.png');
 					">
 				Se connecter
 			</button>
@@ -179,10 +179,10 @@
 					.$_SESSION['LOGGED_USER']['name']; ?>
 			</button>
 <?php 	} else { ?>
-			<button class="button second-color no-border
+			<button class="button second-color no-border no-filter
 						login-panel-button-open"
 					style="
-						--before-image: url('/assets/icons/person-circle.svg');
+						--before-image: url('/assets/icons/italy.png');
 					">
 				Se connecter
 			</button>

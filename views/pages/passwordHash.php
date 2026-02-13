@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<title>Olympiades 2025 - <?php echo $pageTitle ?></title>
+		<title>Olympiades 2026<?php echo $pageTitle ?></title>
 	</head>
 
 	<body>
