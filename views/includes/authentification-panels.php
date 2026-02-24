@@ -163,6 +163,16 @@
 							name="userPassword2">
 				</label>
 
+				<label class="form-label row">
+					<input	class="form-input form-input-checkbox"
+							type="checkbox"
+							name="asMember"
+							value="1">
+					<span class="form-label-bold">
+						Je suis adhérent·e à l'AS IGN
+					</span>
+				</label>
+
 			</fieldset>
 
 			<label class="form-label form-label-submit">
