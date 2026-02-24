@@ -59,6 +59,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' )
                 $_POST['userName'],
                 $_POST['userFirstName'],
 				$_POST['userSize'],
+				isset( $_POST['asMember'] ) ? 1 : 0,
                 [ 'on_failure' => $defaultCallback ],
             )
         )

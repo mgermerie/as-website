@@ -103,18 +103,20 @@ class DatabaseManager
 		$email,
 		$hashedPassword,
 		$size,
+		$asMember,
 	)
 	{
 		return $this->execute_statement(
 			"INSERT INTO
-				users (name, first_name, email, password, size)
-				VALUES (:name, :firstName, :email, :hashedPassword, :size)",
+				users (name, first_name, email, password, size, as_member)
+				VALUES (:name, :firstName, :email, :hashedPassword, :size, :asMember)",
 			[
 				':name' => $name,
 				':firstName' => $firstName,
 				':email' => $email,
 				':hashedPassword' => $hashedPassword,
 				':size' => $size,
+				':asMember' => $asMember,
 			],
 		);
 	}

@@ -46,6 +46,14 @@
 	display: none;
 }
 
+.form-label.row {
+  flex-direction: row;
+}
+
+.form-label-bold {
+  font-weight: bold;
+}
+
 .form-label-hint {
 	width: 100%;
 
@@ -89,3 +97,6 @@
 	align-self: stretch;
 }
 
+.form-input-checkbox {
+  transform: scale(1.5);
+}
