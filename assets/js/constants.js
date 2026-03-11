@@ -13,7 +13,7 @@ const PERFORMANCES_FORMAT = {
 		placeholder: 'Nombre de points',
 		unit: ' points',
 	},
-	'Pétanque': {
+	'Pétanque-Molkky': {
 		test: value => !isNaN(Number(value)),
 		placeholder: 'Nombre de points',
 		unit: ' points',
