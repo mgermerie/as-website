@@ -4,7 +4,7 @@ const PERFORMANCES_FORMAT = {
 		placeholder: 'Distance en mètres',
 		unit: ' mètres',
 	},
-	'Pompes': {
+	'Musculation': {
 		noPerformance: true,
 		unit: '',
 	},

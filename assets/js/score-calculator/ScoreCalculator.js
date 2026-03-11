@@ -16,7 +16,7 @@ const DEFAULT_SCHEMA = {
 		type: Number,
 	},
 	'PETANQUE': {
-		prop: 'Pétanque',
+		prop: 'Pétanque-Molkky',
 		type: Number,
 	},
 	'HALTERES': {
