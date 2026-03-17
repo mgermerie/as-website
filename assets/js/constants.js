@@ -14,9 +14,8 @@ const PERFORMANCES_FORMAT = {
 		unit: ' points',
 	},
 	'Pétanque-Molkky': {
-		test: value => !isNaN(Number(value)),
-		placeholder: 'Nombre de points',
-		unit: ' points',
+		noPerformance: true,
+		unit: '',
 	},
 	'Fléchettes': {
 		test: value => !isNaN(Number(value)),
